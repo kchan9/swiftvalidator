@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page [
+<!ENTITY fields-testsuite SYSTEM "resources/test/fields-testsuite.xml">
+<!ENTITY mt-allowed-follow-by-fields-testsuite SYSTEM "resources/test/mt-allowed-follow-by-fields-testsuite.xml">
+
+]>
+<!-- <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" > -->
+
+<suite name="SwiftValidator Test Suite">
+
+    <!-- TODO: need Field test (should be auto gen) -->
+    &fields-testsuite;
+    
+    <test name="Fieldpart String Test">
+        <classes>
+            <class name="net.uglobal.swiftvalidator.field.FieldPartStringTest" />
+        </classes>
+    </test>
+    
+    <test name="Fieldpart Parser Test">
+        <classes>
+            <class name="net.uglobal.swiftvalidator.parser.FieldPartParserTest" />
+        </classes>
+    </test>
+    
+    <!-- MT Allowed Follow By Fields Test-->
+    &mt-allowed-follow-by-fields-testsuite;
+    
+    <test name="Swift Message Parser Test">
+        <classes>
+        <class name="net.uglobal.swiftvalidator.swift.model.SwiftBlock1Test" />
+        <class name="net.uglobal.swiftvalidator.swift.model.SwiftBlock2InputTest" />
+        <class name="net.uglobal.swiftvalidator.swift.model.SwiftBlock2OutputTest" />
+        <class name="net.uglobal.swiftvalidator.swift.model.SwiftBlock3Test" />
+        <!-- TODO: add SwiftBlock4Test, SwiftBlock5Test -->
+        <class name="net.uglobal.swiftvalidator.swift.service.SwiftMessageServiceTest" />
+        </classes>
+    </test>
+    
+    <test name="Generic Tree Test">
+        <classes>
+            <class name="net.uglobal.collections.tree.TestGenericTree" />
+            <class name="net.uglobal.collections.tree.TestGenericTreeNode" />
+        </classes>
+    </test>
+    
+    <test name="Validate swift.fields.codegen.config.xml file">
+        <classes>
+            <class name="net.uglobal.swiftvalidator.codegen.fields.SwiftFieldsMarshallerTest" />
+        </classes>
+    </test>
+</suite>

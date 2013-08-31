@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="526" name="General Securities Lending/Borrowing Message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" shortName="A" name="Mandatory Sequence A" status="M" repetitive="N" nextSequenceId="2">
+        <field id="1" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Transaction Reference Number</detailedFieldName>
+            <content>
+                <format>20</format>
+            </content>
+        </field>
+        <field id="2" tag="21" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName>Reference</genericFieldName>
+            <detailedFieldName>Related Reference</detailedFieldName>
+            <content>
+                <format>21</format>
+            </content>
+        </field>
+        <field id="3" tag="23" status="M" repetitive="N">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Further Identification</detailedFieldName>
+            <content>
+                <format>23</format>
+            </content>
+        </field>
+        <field id="4" tag="83C" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Safekeeping Account</detailedFieldName>
+            <content>
+                <format>83C</format>
+            </content>
+        </field>
+        <field id="5" tag="29A" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>From</detailedFieldName>
+            <content>
+                <format>29A</format>
+            </content>
+        </field>
+        <field id="6" tag="29B" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>To the Attention of</detailedFieldName>
+            <content>
+                <format>29B</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence A -->
+    <sequence id="2" shortName="B" name="Mandatory Repetitive Sequence B" repetitive="Y" status="M">
+        <field id="7" tag="35B" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Identification of Securities</detailedFieldName>
+            <content>
+                <format>35B</format>
+            </content>
+        </field>
+        <field id="8" tag="35A" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Quantity of Securities</detailedFieldName>
+            <content>
+                <format>35A</format>
+            </content>
+        </field> 
+        <field id="9" tag="30" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Effective Date</detailedFieldName>
+            <content>
+                <format>30</format>
+            </content>
+        </field>
+        <field id="10" tag="31F" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Expiry/Option Date</detailedFieldName>
+            <content>
+                <format>31F</format>
+            </content>
+        </field>
+        <field id="11" tag="87a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName></detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>87A</format>
+                </option>
+                <option name="D">
+                    <format>87D</format>
+                </option>
+            </options>
+        </field>
+        <field id="12" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence B -->
+    
+</mt>

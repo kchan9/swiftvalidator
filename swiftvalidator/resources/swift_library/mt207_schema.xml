@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="207" name="Request For Financial Institution Transfer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" status="M" repetitive="N" nextSequenceId="2"
+        shortName="A" name="Mandatory Sequence A General Information">
+        <field id="1" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Transaction Reference Number</detailedFieldName>
+            <content>
+                <format>20</format>
+            </content>
+        </field>
+        <field id="2" tag="21R" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Specified Reference of the Ordering Institution</detailedFieldName>
+            <content>
+                <format>21R</format>
+            </content>
+        </field>
+        <field id="3" tag="28D" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Message Index/Total</detailedFieldName>
+            <content>
+                <format>28D</format>
+            </content>
+        </field>
+        <field id="4" tag="30" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Requested Execution Date</detailedFieldName>
+            <content>
+                <format>30</format>
+            </content>
+        </field>
+        <field id="5" tag="51A" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Initiating Institution</detailedFieldName>
+            <content>
+                <format>51A</format>
+            </content>
+        </field>
+        <field id="6" tag="52G" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Ordering Institution</detailedFieldName>
+            <content>
+                <format>52G</format>
+            </content>
+        </field>
+        <field id="7" tag="52a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account Servicing Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>52A</format>
+                </option>
+                <option name="C">
+                    <format>52C</format>
+                </option>
+            </options>
+        </field>
+        <field id="8" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence A -->
+    <sequence id="2" status="M" repetitive="Y" 
+        shortName="B" name="Mandatory Repetitive Sequence B Transaction Details">
+        <field id="9" tag="21" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Transaction Reference</detailedFieldName>
+            <content>
+                <format>21</format>
+            </content>
+        </field>
+        <field id="10" tag="23E" status="O" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Instruction Code</detailedFieldName>
+            <content>
+                <format>23E</format>
+            </content>
+        </field>
+        <field id="11" tag="32B" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Currency/Transaction Amount</detailedFieldName>
+            <content>
+                <format>32B</format>
+            </content>
+        </field>
+        <field id="12" tag="56a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Intermediary</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>56A</format>
+                </option>
+                <option name="D">
+                    <format>56D</format>
+                </option>
+            </options>
+        </field>
+        <field id="13" tag="57a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account With Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>57A</format>
+                </option>
+                <option name="C">
+                    <format>57C</format>
+                </option>
+                <option name="D">
+                    <format>57D</format>
+                </option>
+            </options>
+        </field>
+        <field id="14" tag="58a" status="M" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Beneficiary Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>58A</format>
+                </option>
+                <option name="D">
+                    <format>58D</format>
+                </option>
+            </options>
+        </field>
+    </sequence> <!-- End of Sequence B -->
+</mt>

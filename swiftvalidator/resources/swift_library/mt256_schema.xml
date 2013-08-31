@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="256" name="Advice of Non-Payment of Cheques" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" status="M" repetitive="N" nextSequenceId="2"
+        shortName="A" name="Mandatory Sequence A Common Elements">
+        <field id="1" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender's Reference</detailedFieldName>
+            <content>
+                <format>20</format>
+            </content>
+        </field>
+        <field id="2" tag="21" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Related Message Reference</detailedFieldName>
+            <content>
+                <format>21</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence A -->
+    <sequence id="2" status="M" repetitive="Y" nextSequenceId="3" 
+        shortName="B" name="Mandatory Repetitive Sequence B Cheque Details">
+        <field id="3" tag="44A" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Transaction Reference Number</detailedFieldName>
+            <content>
+                <format>44A</format>
+            </content>
+        </field>
+        <field id="4" tag="21" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Related Message Reference</detailedFieldName>
+            <content>
+                <format>21</format>
+            </content>
+        </field>
+        <field id="5" tag="21D" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Cheque Number</detailedFieldName>
+            <content>
+                <format>21D</format>
+            </content>
+        </field>
+        <field id="6" tag="21E" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Cheuq Reference Number</detailedFieldName>
+            <content>
+                <format>21E</format>
+            </content>
+        </field>
+        <field id="7" tag="23E" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Reason for Non-Payment/Dishonour</detailedFieldName>
+            <content>
+                <format>23E</format>
+            </content>
+        </field>
+        <field id="8" tag="32J" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Cheque Amount</detailedFieldName>
+            <content>
+                <format>32J</format>
+            </content>
+        </field>
+        <field id="9" tag="37J" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Interest Rate</detailedFieldName>
+            <content>
+                <format>37J</format>
+            </content>
+        </field>
+        <field id="10" tag="71G" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Interest Charges</detailedFieldName>
+            <content>
+                <format>71G</format>
+            </content>
+        </field>
+        <field id="11" tag="71F" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender's Charges</detailedFieldName>
+            <content>
+                <format>71F</format>
+            </content>
+        </field>
+        <field id="12" tag="71H" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Issuer's Financial Institution Charges</detailedFieldName>
+            <content>
+                <format>71H</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence B -->
+    <sequence id="3" status="M" repetitive="N" 
+        shortName="C" name="Mandatory Sequence C Settlement Details">
+        <field id="13" tag="32A" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Value Date, Currency Code and Total Amount Claimed</detailedFieldName>
+            <content>
+                <format>32A</format>
+            </content>
+        </field>
+        <field id="14" tag="30" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Original Value Date</detailedFieldName>
+            <content>
+                <format>30</format>
+            </content>
+        </field>
+        <field id="15" tag="19" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Total Cheque Amount</detailedFieldName>
+            <content>
+                <format>19</format>
+            </content>
+        </field>
+        <field id="16" tag="71J" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sum of Interest Charges</detailedFieldName>
+            <content>
+                <format>71J</format>
+            </content>
+        </field>
+        <field id="17" tag="71L" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sum of Sender's Charges</detailedFieldName>
+            <content>
+                <format>71L</format>
+            </content>
+        </field>
+        <field id="18" tag="71K" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sum of Issuer's Financial Institution Charges</detailedFieldName>
+            <content>
+                <format>71K</format>
+            </content>
+        </field>
+        <field id="19" tag="57a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account With Institution (for Settlement)</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>57A</format>
+                </option>
+                <option name="C">
+                    <format>57C</format>
+                </option>
+                <option name="D">
+                    <format>57D</format>
+                </option>
+            </options>
+        </field>
+        <field id="20" tag="58B" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Beneficiary Institution's Account (for Settlement)</detailedFieldName>
+            <content>
+                <format>58B</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence C -->
+</mt>

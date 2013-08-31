@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="559" name="Paying Agent's Claim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <!--
+        NOTE:
+        Use a dummy sequence to simulate a multiple fields repeat.
+    -->
+    <sequence id="1" shortName="DUMMY" name="Dummy Sequence" repetitive="N" status="M">
+        <field id="1" tag="19" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sum of Net Proceeds</detailedFieldName>
+            <content>
+                <format>19</format>
+            </content>
+        </field>
+        <field id="2" tag="23" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Further Identification</detailedFieldName>
+            <content>
+                <format>23</format>
+            </content>
+        </field>
+        <field id="3" tag="53a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account for Payment</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>53A</format>
+                </option>
+                <option name="C">
+                    <format>53C</format>
+                </option>
+                <option name="D">
+                    <format>53D</format>
+                </option>
+            </options>
+        </field>
+        <field id="4" tag="57a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account With Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>57A</format>
+                </option>
+                <option name="B">
+                    <format>57B</format>
+                </option>
+                <option name="D">
+                    <format>57D</format>
+                </option>
+            </options>
+        </field>
+        <field id="5" tag="72" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+        <!--
+            NOTE:
+            Use a dummy sequence to simulate a multiple fields repeat.
+        -->
+        <sequence id="2" shortName="DUMMY" name="Dummy Sequence" repetitive="Y" status="M" parentSequenceId="1">
+            <field id="6" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Transaction Reference Number</detailedFieldName>
+                <content>
+                    <format>20</format>
+                </content>
+            </field>
+            <field id="7" tag="35A" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Quantity of Securities</detailedFieldName>
+                <content>
+                    <format>35A</format>
+                </content>
+            </field>
+            <field id="8" tag="35B" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Identification of Securities</detailedFieldName>
+                <content>
+                    <format>35B</format>
+                </content>
+            </field>
+            <field id="9" tag="35a" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Coupon Collected</detailedFieldName>
+                <options>
+                    <option name="C">
+                        <format>35C</format>
+                    </option>
+                    <option name="D">
+                        <format>35D</format>
+                    </option>
+                </options>
+            </field>
+            <field id="10" tag="35E" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Certificate Numbers</detailedFieldName>
+                <content>
+                    <format>35E</format>
+                </content>
+            </field>
+            <field id="11" tag="35U" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Dividend/Interest Rate</detailedFieldName>
+                <content>
+                    <format>35U</format>
+                </content>
+            </field>
+            <field id="12" tag="31E" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Record Date</detailedFieldName>
+                <content>
+                    <format>31E</format>
+                </content>
+            </field>
+            <field id="13" tag="31L" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Coupon Clipping Date</detailedFieldName>
+                <content>
+                    <format>31L</format>
+                </content>
+            </field>
+            <field id="14" tag="31C" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Payable Date</detailedFieldName>
+                <content>
+                    <format>31C</format>
+                </content>
+            </field>
+            <field id="15" tag="31S" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Call Date</detailedFieldName>
+                <content>
+                    <format>31S</format>
+                </content>
+            </field>
+            <field id="16" tag="80C" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Components of Income</detailedFieldName>
+                <content>
+                    <format>80C</format>
+                </content>
+            </field>
+            <field id="17" tag="33T" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Redemption Price</detailedFieldName>
+                <content>
+                    <format>33T</format>
+                </content>
+            </field>
+            <field id="18" tag="35L" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Terms</detailedFieldName>
+                <content>
+                    <format>35L</format>
+                </content>
+            </field>
+            <field id="19" tag="32M" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Redemption Amount</detailedFieldName>
+                <content>
+                    <format>32M</format>
+                </content>
+            </field>
+            <field id="20" tag="32G" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Gross Amount</detailedFieldName>
+                <content>
+                    <format>32G</format>
+                </content>
+            </field>
+            <field id="21" tag="71C" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Other Charges</detailedFieldName>
+                <content>
+                    <format>71C</format>
+                </content>
+            </field>
+            <field id="22" tag="71B" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Own Charges</detailedFieldName>
+                <content>
+                    <format>71B</format>
+                </content>
+            </field>
+            <field id="23" tag="36" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Exchange Rate</detailedFieldName>
+                <content>
+                    <format>36</format>
+                </content>
+            </field>
+            <field id="24" tag="34A" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Net Proceeds</detailedFieldName>
+                <content>
+                    <format>34A</format>
+                </content>
+            </field>
+            <field id="25" tag="75" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Queries</detailedFieldName>
+                <content>
+                    <format>75</format>
+                </content>
+            </field>
+            <field id="26" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+                <content>
+                    <format>72</format>
+                </content>
+            </field>
+        </sequence>
+    </sequence>
+</mt>

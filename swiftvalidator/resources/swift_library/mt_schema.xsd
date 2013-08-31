@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- MT -->
+    <xs:element name="mt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="id" type="mtTypeEnum" use="required" />
+            <xs:attribute name="name" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <!-- sequence -->
+    <xs:element name="sequence">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- NOTE: Ignore the UPA (Unique Particle Attribution) error -->
+                <!-- <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" /> -->
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="sequence" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="required" />
+            <xs:attribute name="shortName" type="sequenceShortNameEnum" use="required" />
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="status" type="statusEnum" use="required" />
+            <xs:attribute name="repetitive" type="repetitiveEnum" use="required" />
+            <xs:attribute name="nextSequenceId" type="xs:int" use="optional" />
+            <xs:attribute name="parentSequenceId" type="xs:int" use="optional" />
+            <!-- <xs:attribute name="level" type="xs:int" use="optional" /> -->
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- field -->
+    <xs:element name="field">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="qualifier" minOccurs="1" maxOccurs="1" />
+                <xs:element name="genericFieldName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                <xs:element name="detailedFieldName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                <xs:choice>
+                    <xs:sequence>
+                        <xs:element ref="content" minOccurs="1" maxOccurs="1"></xs:element>
+                        <xs:element ref="options" minOccurs="0" maxOccurs="0"></xs:element>
+                    </xs:sequence>
+                    <xs:sequence>
+                        <xs:element ref="content" minOccurs="0" maxOccurs="0"></xs:element>
+                        <xs:element ref="options" minOccurs="1" maxOccurs="1"></xs:element>
+                    </xs:sequence>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="required" />
+            <xs:attribute name="tag" type="tagEnum" use="required" />
+            <xs:attribute name="status" type="statusEnum" use="required" />
+            <xs:attribute name="repetitive" type="repetitiveEnum" use="required" />
+            <xs:attribute name="firstOfSequence" type="firstOfSequenceEnum" use="optional" />
+            <xs:attribute name="lastOfSequence" type="lastOfSequenceEnum" use="optional" />
+            <xs:attribute name="repetitiveStart" type="repetitiveStartEnum" use="optional" />
+            <xs:attribute name="repetitiveEnd" type="repetitiveEndEnum" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="options">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="option" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="format" type="fieldNameEnum" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="name" type="optionNameEnum" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="qualifier" type="qualifierValueFormatType" />
+    <xs:element name="content" type="contentValueFormatType" />
+    <xs:complexType name="qualifierValueFormatType">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="0" />
+                <xs:element name="format" type="xs:string" minOccurs="0" maxOccurs="0" />
+            </xs:sequence>
+            <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1" />
+                <xs:element name="format" type="xs:string" minOccurs="0" maxOccurs="0" />
+            </xs:sequence>
+            <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="0" />
+                <xs:element name="format" type="xs:string" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="contentValueFormatType">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1" />
+                <xs:element name="format" type="fieldNameEnum" minOccurs="0" maxOccurs="0" />
+            </xs:sequence>
+            <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="0" />
+                <xs:element name="format" type="fieldNameEnum" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+    <!-- Enumerations -->
+    <xs:simpleType name="optionNameEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="" />
+            <xs:enumeration value="A" />
+            <xs:enumeration value="B" />
+            <xs:enumeration value="C" />
+            <xs:enumeration value="D" />
+            <xs:enumeration value="E" />
+            <xs:enumeration value="F" />
+            <xs:enumeration value="G" />
+            <xs:enumeration value="H" />
+            <xs:enumeration value="J" />
+            <xs:enumeration value="K" />
+            <xs:enumeration value="L" />
+            <xs:enumeration value="M" />
+            <xs:enumeration value="N" />
+            <xs:enumeration value="P" />
+            <xs:enumeration value="Q" />
+            <xs:enumeration value="R" />
+            <xs:enumeration value="S" />
+            <xs:enumeration value="U" />
+            <xs:enumeration value="V" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="mtTypeEnum">
+        <xs:restriction base="xs:string">
+            <!-- Category 2 -->
+            <xs:enumeration value="200" />
+            <xs:enumeration value="201" />
+            <xs:enumeration value="202" />
+            <xs:enumeration value="202cov" />
+            <xs:enumeration value="203" />
+            <xs:enumeration value="204" />
+            <xs:enumeration value="205" />
+            <xs:enumeration value="205cov" />
+            <xs:enumeration value="207" />
+            <xs:enumeration value="210" />
+            <xs:enumeration value="256" />
+            
+            <!-- Category 3 -->
+            <xs:enumeration value="300" />
+            <xs:enumeration value="303" />
+            <xs:enumeration value="307" />
+            <xs:enumeration value="321" />
+            <xs:enumeration value="380" />
+            <xs:enumeration value="381" />
+            
+            <!-- Category 5 -->
+            <xs:enumeration value="500" />
+            <xs:enumeration value="501" />
+            <xs:enumeration value="502" />
+            <xs:enumeration value="503" />
+            <xs:enumeration value="504" />
+            <xs:enumeration value="505" />
+            <xs:enumeration value="506" />
+            <xs:enumeration value="507" />
+            <xs:enumeration value="508" />
+            <xs:enumeration value="509" />
+            <xs:enumeration value="510" />
+            <xs:enumeration value="513" />
+            <xs:enumeration value="514" />
+            <xs:enumeration value="515" />
+            <xs:enumeration value="516" />
+            <xs:enumeration value="517" />
+            <xs:enumeration value="518" />
+            <xs:enumeration value="519" />
+            <xs:enumeration value="524" />
+            <xs:enumeration value="526" />
+            <xs:enumeration value="527" />
+            <xs:enumeration value="530" />
+            <xs:enumeration value="535" />
+            <xs:enumeration value="536" />
+            <xs:enumeration value="537" />
+            <xs:enumeration value="538" />
+            <xs:enumeration value="540" />
+            <xs:enumeration value="541" />
+            <xs:enumeration value="542" />
+            <xs:enumeration value="543" />
+            <xs:enumeration value="544" />
+            <xs:enumeration value="545" />
+            <xs:enumeration value="546" />
+            <xs:enumeration value="547" />
+            <xs:enumeration value="548" />
+            <xs:enumeration value="549" />
+            <xs:enumeration value="558" />
+            <xs:enumeration value="559" />
+            <xs:enumeration value="564" />
+            <xs:enumeration value="565" />
+            <xs:enumeration value="566" />
+            <xs:enumeration value="567" />
+            <xs:enumeration value="568" />
+            <xs:enumeration value="569" />
+            <xs:enumeration value="575" />
+            <xs:enumeration value="576" />
+            <xs:enumeration value="577" />
+            <xs:enumeration value="578" />
+            <xs:enumeration value="579" />
+            <xs:enumeration value="581" />
+            <xs:enumeration value="586" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="statusEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M" />
+            <xs:enumeration value="O" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="repetitiveEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="firstOfSequenceEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="lastOfSequenceEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="repetitiveStartEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="repetitiveEndEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tagEnum">
+        <xs:union memberTypes="fieldNameEnum fieldTypeEnum"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="fieldNameEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="11A" />
+            
+            <xs:enumeration value="12A" />
+            <xs:enumeration value="12B" />
+            <xs:enumeration value="12C" />
+            
+            <xs:enumeration value="13A" />
+            <xs:enumeration value="13B" />
+            <xs:enumeration value="13C" />
+            <xs:enumeration value="13E" />
+            <xs:enumeration value="13J" />
+            <xs:enumeration value="13K" />
+            
+            <xs:enumeration value="14C" />
+            
+            <xs:enumeration value="15A" />
+            <xs:enumeration value="15B" />
+            <xs:enumeration value="15C" />
+            <xs:enumeration value="15D" />
+            
+            <xs:enumeration value="16A" />
+            <xs:enumeration value="16R" />
+            <xs:enumeration value="16S" />
+            
+            <xs:enumeration value="17A" />
+            <xs:enumeration value="17B" />
+            <xs:enumeration value="17T" />
+            <xs:enumeration value="17U" />
+            
+            <xs:enumeration value="19" />
+            <xs:enumeration value="19A" />
+            <xs:enumeration value="19B" />
+            
+            <xs:enumeration value="20" />
+            <xs:enumeration value="20C" />
+            <xs:enumeration value="20D" />
+            
+            <xs:enumeration value="21" />
+            <xs:enumeration value="21A" />
+            <xs:enumeration value="21D" />
+            <xs:enumeration value="21E" />
+            <xs:enumeration value="21G" />
+            <xs:enumeration value="21R" />
+            
+            <xs:enumeration value="22A" />
+            <xs:enumeration value="22C" />
+            <xs:enumeration value="22F" />
+            <xs:enumeration value="22H" />
+            
+            <xs:enumeration value="23" />
+            <xs:enumeration value="23B" />
+            <xs:enumeration value="23E" />
+            <xs:enumeration value="23G" />
+            
+            <xs:enumeration value="24B" />
+            <xs:enumeration value="24D" />
+            
+            <xs:enumeration value="25" />
+            <xs:enumeration value="25D" />
+            
+            <xs:enumeration value="26H" />
+            
+            <xs:enumeration value="28" />
+            <xs:enumeration value="28C" />
+            <xs:enumeration value="28D" />
+            <xs:enumeration value="28E" />
+            
+            <xs:enumeration value="29A" />
+            <xs:enumeration value="29B" />
+            <xs:enumeration value="29C" />
+            
+            <xs:enumeration value="30" />
+            <xs:enumeration value="30F" />
+            <xs:enumeration value="30P" />
+            <xs:enumeration value="30T" />
+            <xs:enumeration value="30V" />
+            <xs:enumeration value="30X" />
+            
+            <xs:enumeration value="31C" />
+            <xs:enumeration value="31E" />
+            <xs:enumeration value="31F" />
+            <xs:enumeration value="31L" />
+            <xs:enumeration value="31P" />
+            <xs:enumeration value="31S" />
+            <xs:enumeration value="31X" />
+            
+            <xs:enumeration value="32A" />
+            <xs:enumeration value="32B" />
+            <xs:enumeration value="32G" />
+            <xs:enumeration value="32J" />
+            <xs:enumeration value="32M" />
+            
+            <xs:enumeration value="33B" />
+            <xs:enumeration value="33S" />
+            <xs:enumeration value="33T" />
+            
+            <xs:enumeration value="34A" />
+            <xs:enumeration value="34B" />
+            
+            <xs:enumeration value="35A" />
+            <xs:enumeration value="35B" />
+            <xs:enumeration value="35C" />
+            <xs:enumeration value="35D" />
+            <xs:enumeration value="35E" />
+            <xs:enumeration value="35F" />
+            <xs:enumeration value="35H" />
+            <xs:enumeration value="35L" />
+            <xs:enumeration value="35N" />
+            <xs:enumeration value="35S" />
+            <xs:enumeration value="35U" />
+            
+            <xs:enumeration value="36" />
+            <xs:enumeration value="36A" />
+            <xs:enumeration value="36B" />
+            <xs:enumeration value="36C" />
+            <xs:enumeration value="36E" />
+            
+            <xs:enumeration value="37A" />
+            <xs:enumeration value="37B" />
+            <xs:enumeration value="37C" />
+            <xs:enumeration value="37D" />
+            <xs:enumeration value="37E" />
+            <xs:enumeration value="37F" />
+            <xs:enumeration value="37J" />
+            
+            <xs:enumeration value="39P" />
+            
+            <xs:enumeration value="44A" />
+            
+            <xs:enumeration value="50" />
+            <xs:enumeration value="50A" />
+            <xs:enumeration value="50C" />
+            <xs:enumeration value="50F" />
+            <xs:enumeration value="50K" />
+            
+            <xs:enumeration value="51A" />
+            
+            <xs:enumeration value="52A" />
+            <xs:enumeration value="52C" />
+            <xs:enumeration value="52D" />
+            <xs:enumeration value="52G" />
+            
+            <xs:enumeration value="53A" />
+            <xs:enumeration value="53B" />
+            <xs:enumeration value="53C" />
+            <xs:enumeration value="53D" />
+            <xs:enumeration value="53J" />
+            
+            <xs:enumeration value="54A" />
+            <xs:enumeration value="54B" />
+            <xs:enumeration value="54D" />
+            
+            <xs:enumeration value="56A" />
+            <xs:enumeration value="56C" />
+            <xs:enumeration value="56D" />
+            <xs:enumeration value="56J" />
+            
+            <xs:enumeration value="57A" />
+            <xs:enumeration value="57B" />
+            <xs:enumeration value="57C" />
+            <xs:enumeration value="57D" />
+            <xs:enumeration value="57J" />
+            
+            <xs:enumeration value="58A" />
+            <xs:enumeration value="58B" />
+            <xs:enumeration value="58D" />
+            <xs:enumeration value="58J" />
+            
+            <xs:enumeration value="59" />
+            <xs:enumeration value="59A" />
+            
+            <xs:enumeration value="67A" />
+            
+            <xs:enumeration value="69A" />
+            <xs:enumeration value="69B" />
+            <xs:enumeration value="69C" />
+            <xs:enumeration value="69D" />
+            <xs:enumeration value="69E" />
+            <xs:enumeration value="69F" />
+            <xs:enumeration value="69J" />
+            
+            <xs:enumeration value="70" />
+            
+            <xs:enumeration value="70C" />
+            <xs:enumeration value="70D" />
+            <xs:enumeration value="70E" />
+            <xs:enumeration value="70F" />
+            <xs:enumeration value="70G" />
+            
+            <xs:enumeration value="71B" />
+            <xs:enumeration value="71C" />
+            <xs:enumeration value="71F" />
+            <xs:enumeration value="71G" />
+            <xs:enumeration value="71H" />
+            <xs:enumeration value="71J" />
+            <xs:enumeration value="71K" />
+            <xs:enumeration value="71L" />
+            
+            <xs:enumeration value="72" />
+            
+            <xs:enumeration value="75" />
+            
+            <xs:enumeration value="77D" />
+            <xs:enumeration value="77H" />
+            
+            <xs:enumeration value="80C" />
+            
+            <xs:enumeration value="82A" />
+            <xs:enumeration value="82D" />
+            <xs:enumeration value="82J" />
+            
+            <xs:enumeration value="83A" />
+            <xs:enumeration value="83C" />
+            <xs:enumeration value="83D" />
+            <xs:enumeration value="83J" />
+            
+            <xs:enumeration value="84A" />
+            <xs:enumeration value="84B" />
+            <xs:enumeration value="84D" />
+            <xs:enumeration value="84J" />
+            
+            <xs:enumeration value="85A" />
+            <xs:enumeration value="85B" />
+            <xs:enumeration value="85D" />
+            <xs:enumeration value="85J" />
+            
+            <xs:enumeration value="87A" />
+            <xs:enumeration value="87D" />
+            <xs:enumeration value="87J" />
+            
+            <xs:enumeration value="88A" />
+            <xs:enumeration value="88D" />
+            <xs:enumeration value="88J" />
+            
+            <xs:enumeration value="90A" />
+            <xs:enumeration value="90B" />
+            <xs:enumeration value="90E" />
+            <xs:enumeration value="90F" />
+            <xs:enumeration value="90J" />
+            <xs:enumeration value="90K" />
+            
+            <xs:enumeration value="92A" />
+            <xs:enumeration value="92B" />
+            <xs:enumeration value="92C" />
+            <xs:enumeration value="92D" />
+            <xs:enumeration value="92F" />
+            <xs:enumeration value="92J" />
+            <xs:enumeration value="92K" />
+            <xs:enumeration value="92L" />
+            <xs:enumeration value="92M" />
+            <xs:enumeration value="92N" />
+            
+            <xs:enumeration value="93A" />
+            <xs:enumeration value="93B" />
+            <xs:enumeration value="93C" />
+            <xs:enumeration value="93D" />
+            
+            <xs:enumeration value="94A" />
+            <xs:enumeration value="94B" />
+            <xs:enumeration value="94C" />
+            <xs:enumeration value="94D" />
+            <xs:enumeration value="94F" />
+            <xs:enumeration value="94G" />
+            <xs:enumeration value="94H" />
+            
+            <xs:enumeration value="95C" />
+            <xs:enumeration value="95P" />
+            <xs:enumeration value="95Q" />
+            <xs:enumeration value="95R" />
+            <xs:enumeration value="95S" />
+            <xs:enumeration value="95U" />
+            <xs:enumeration value="95V" />
+            
+            <xs:enumeration value="97A" />
+            <xs:enumeration value="97B" />
+            <xs:enumeration value="97C" />
+            <xs:enumeration value="97E" />
+            
+            <xs:enumeration value="98A" />
+            <xs:enumeration value="98B" />
+            <xs:enumeration value="98C" />
+            <xs:enumeration value="98E" />
+            <xs:enumeration value="98F" />
+            
+            <xs:enumeration value="99A" />
+            <xs:enumeration value="99B" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="fieldTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="12a" />
+            <xs:enumeration value="13a" />
+            <xs:enumeration value="22a" />
+            <xs:enumeration value="35a" />
+            <xs:enumeration value="32a" />
+            <xs:enumeration value="36a" />
+            <xs:enumeration value="37a" />
+            <xs:enumeration value="50a" />
+            <xs:enumeration value="52a" />
+            <xs:enumeration value="53a" />
+            <xs:enumeration value="54a" />
+            <xs:enumeration value="56a" />
+            <xs:enumeration value="57a" />
+            <xs:enumeration value="58a" />
+            <xs:enumeration value="59a" />
+            <xs:enumeration value="69a" />
+            <xs:enumeration value="70a" />
+            <xs:enumeration value="82a" />
+            <xs:enumeration value="83a" />
+            <xs:enumeration value="84a" />
+            <xs:enumeration value="85a" />
+            <xs:enumeration value="87a" />
+            <xs:enumeration value="88a" />
+            <xs:enumeration value="90a" />
+            <xs:enumeration value="92a" />
+            <xs:enumeration value="93a" />
+            <xs:enumeration value="94a" />
+            <xs:enumeration value="95a" />
+            <xs:enumeration value="97a" />
+            <xs:enumeration value="98a" />
+            <xs:enumeration value="99a" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="sequenceShortNameEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DUMMY" />
+            <xs:enumeration value="A" />
+            <xs:enumeration value="A1" />
+            <xs:enumeration value="A2" />
+            <xs:enumeration value="A2a" />
+            <xs:enumeration value="A3" />
+            <xs:enumeration value="B" />
+            <xs:enumeration value="B1" />
+            <xs:enumeration value="B1a" />
+            <xs:enumeration value="B1a1" />
+            <xs:enumeration value="B1a2" />
+            <xs:enumeration value="B1a2A" />
+            <xs:enumeration value="B1a3" />
+            <xs:enumeration value="B1a4" />
+            <xs:enumeration value="B1b" />
+            <xs:enumeration value="B1b1" />
+            <xs:enumeration value="B1c" />
+            <xs:enumeration value="B2" />
+            <xs:enumeration value="B2a" />
+            <xs:enumeration value="B2b" />
+            <xs:enumeration value="B2b1" />
+            <xs:enumeration value="B2c" />
+            <xs:enumeration value="B2a1" />
+            <xs:enumeration value="B3" />
+            <xs:enumeration value="B3a" />
+            <xs:enumeration value="B4" />
+            <xs:enumeration value="B5" />
+            <xs:enumeration value="B5a" />
+            <xs:enumeration value="B5b" />
+            <xs:enumeration value="C" />
+            <xs:enumeration value="C1" />
+            <xs:enumeration value="C1a" />
+            <xs:enumeration value="C1a1" />
+            <xs:enumeration value="C1a1A" />
+            <xs:enumeration value="C2" />
+            <xs:enumeration value="C2a" />
+            <xs:enumeration value="C2a1" />
+            <xs:enumeration value="C3" />
+            <xs:enumeration value="C3a" />
+            <xs:enumeration value="D" />
+            <xs:enumeration value="D1" />
+            <xs:enumeration value="D1a" />
+            <xs:enumeration value="D1b" />
+            <xs:enumeration value="D2" />
+            <xs:enumeration value="D2a" />
+            <xs:enumeration value="D2b" />
+            <xs:enumeration value="D3" />
+            <xs:enumeration value="E" />
+            <xs:enumeration value="E1" />
+            <xs:enumeration value="E1a" />
+            <xs:enumeration value="E2" />
+            <xs:enumeration value="E3" />
+            <xs:enumeration value="F" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

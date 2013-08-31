@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldDictionary maxfid="220">
+    <!--
+    <codeGenerationConfig>
+            <packageName>net.uglobal.swiftvalidator.swift.field</packageName>    
+            <classNamePrefix>Field</classNamePrefix>
+    </codeGenerationConfig>
+    -->
+
+
+     <!-- 
+     IMPORTANT:
+     Custom formatString (altered) - e.g. 35B
+     The original formatString as been replaced by the customized one, 
+     which is needed for parsing 
+     ORIGINAL: 
+     [ISIN1!e12!c]
+[4*35x]
+     NEW: 
+     <formatString>[ISIN1!e12!c1!r1!w][4*35x]</formatString>
+     -->
+
+    <version major="1" minor="0" />
+    <fields>
+        <!-- TODO: need codegen code for 16R, 16S -->
+        <!--field name="16R" fid="1">
+            <component name="code" />       
+        </field-->
+        <!-- <field name="16S" fid="2">
+            <component name="code" />
+        </field> -->
+        
+        <!-- 11 -->
+        <field name="11A" fid="3">
+            <component name="qualifier" />
+            <component name="currencyCode" />
+            <formatString>:4!c//3!a</formatString>
+        </field>
+        
+        <!-- 12 -->
+        <field name="12A" fid="4">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="instrumentCodeOrDescription" />
+            <formatString>:4!c/[8c]/30x</formatString>
+        </field>
+        <field name="12B" fid="5">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="instrumentTypeCode" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        <field name="12C" fid="6">
+            <component name="qualifier" />
+            <component name="cFICode" />
+            <formatString>:4!c//6!c</formatString>
+        </field>
+        
+        <!-- 13 -->
+        <field name="13A" fid="7">
+            <component name="qualifier" />
+            <component name="numberId" />
+            <formatString>:4!c//3!c</formatString>
+        </field>
+        <field name="13B" fid="8">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="numberId" />
+            <formatString>:4!c/[8c]/30x</formatString>
+        </field>
+        <field name="13C" fid="141">
+            <component name="code" />
+            <component name="timeIndication" />
+            <component name="sign" />
+            <component name="timeOffset" />
+            <formatString>/8c/4!n1!x4!n</formatString>
+        </field>
+        <field name="13E" fid="215">
+            <component name="date" />
+            <component name="time" />
+            <formatString>8!n4!n</formatString>
+        </field>
+        <field name="13J" fid="132">
+            <component name="qualifier" />
+            <component name="extendedNumberId" />
+            <formatString>:4!c//5!c</formatString>
+        </field>
+        <field name="13K" fid="133">
+            <component name="qualifier" />
+            <component name="numberId" />
+            <component name="quantity" />
+            <formatString>:4!c//3!c/15d</formatString>
+        </field>
+        
+        <!-- 14 -->
+        <field name="14C" fid="189">
+            <component name="year" />
+            <formatString>4!c</formatString>
+        </field>
+        
+        <!-- 15 -->
+        <!-- <field name="15A" fid="TBD">
+            <component name="" />
+            <formatString></formatString>
+        </field>
+        <field name="15B" fid="TBD">
+            <component name="" />
+            <formatString></formatString>
+        </field>
+        <field name="15C" fid="TBE">
+            <component name="" />
+            <formatString></formatString>
+        </field>
+        <field name="15D" fid="TBD">
+            <component name="" />
+            <formatString></formatString>
+        </field> -->
+        
+        <!-- 16 -->
+        <field name="16A" fid="198">
+            <component name="number" />
+            <formatString>5n</formatString>
+        </field>
+        
+        <!-- 17 -->
+        <field name="17A" fid="197">
+            <component name="indicator" />
+            <formatString>1!a</formatString>
+        </field>
+        <field name="17B" fid="10">
+            <component name="qualifier" />
+            <component name="flag" />
+            <formatString>:4!c//1!a</formatString>
+        </field>
+        <field name="17T" fid="181">
+            <component name="indicator" />
+            <formatString>1!a</formatString>
+        </field>
+        <field name="17U" fid="182">
+            <component name="indicator" />
+            <formatString>1!a</formatString>
+        </field>
+        
+        <!-- 19 -->
+        <field name="19" fid="88">
+            <component name="amount" />
+            <formatString>17d</formatString>
+        </field>
+        <field name="19A" fid="11">
+            <component name="qualifier" />
+            <component name="sign" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <formatString>:4!c//[N]3!a15d</formatString>
+        </field>
+        <field name="19B" fid="72">
+            <component name="qualifier" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <formatString>:4!c//3!a15d</formatString>
+        </field>
+        
+        <!-- 20 -->
+        <field name="20" fid="79">
+            <component name="transactionReferenceNumber" />
+            <formatString>16x</formatString>
+        </field>
+        <field name="20C" fid="12">
+            <component name="qualifier" />
+            <component name="reference" />
+            <formatString>:4!c//16x</formatString>
+        </field>
+        <field name="20D" fid="74">
+            <component name="qualifier" />
+            <component name="reference" />
+            <formatString>:4!c//25x</formatString>
+        </field>
+        
+        <!-- 21 -->
+        <field name="21" fid="80">
+            <component name="relatedReference" />
+            <formatString>16x</formatString>        
+        </field>
+        <field name="21A" fid="220">
+            <component name="reference" />
+            <formatString>16x</formatString>
+        </field>
+        <field name="21D" fid="167">
+            <component name="chequeNumber" />
+            <formatString>35x</formatString>
+        </field>
+        <field name="21E" fid="169">
+            <component name="chequeReferenceNumber" />
+            <formatString>35x</formatString>
+        </field>
+        <field name="21G" fid="196">
+            <component name="reference" />
+            <formatString>16x</formatString>
+        </field>
+        <field name="21R" fid="158">
+            <component name="orderingInstitution" />
+            <formatString>16x</formatString>
+        </field>
+        
+        <!-- 22 -->
+        <field name="22A" fid="178">
+            <component name="type" />
+            <formatString>4!c</formatString>
+        </field>
+        <field name="22C" fid="180">
+            <component name="bankCode1" />
+            <component name="locationCode1" />
+            <component name="referenceCode" />
+            <component name="bankCode2" />
+            <component name="locationCode2" />
+            <formatString>4!a2!c4!n4!a2!c</formatString>
+        </field>
+        <field name="22F" fid="13">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="indicator" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        <field name="22H" fid="68">
+            <component name="qualifier" />
+            <component name="indicator" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        
+        <!-- 23 -->
+        <field name="23" fid="81">
+            <component name="furtherIdentification" />
+            <formatString>16x</formatString>        
+        </field>
+        <field name="23B" fid="211">
+            <component name="type" />
+            <formatString>4!c</formatString>
+        </field>
+        <field name="23E" fid="163">
+            <component name="instructionCode" />
+            <component name="additionalInformation" />
+            <formatString>4!c[/30x]</formatString>
+        </field>
+        <field name="23G" fid="14">
+            <component name="function" />
+            <component name="subfunction" />
+            <formatString>4!c[/4!c]</formatString>
+        </field>
+        
+        <!-- 24 -->
+        <field name="24B" fid="73">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="reasonCode" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        <field name="24D" fid="199">
+            <component name="method" />
+            <component name="additionalInformation" />
+            <formatString>4!c[/35x]</formatString>
+        </field>
+        
+        <!-- 25 -->
+        <field name="25" fid="164">
+            <component name="account" />
+            <formatString>35x</formatString>
+        </field>
+        <field name="25D" fid="15">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="statusCode" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        
+        <!-- 26 -->
+        <field name="26H" fid="124">
+            <component name="collateralType" />
+            <formatString>16x</formatString>
+        </field>
+        
+        <!-- 28 -->
+        <field name="28" fid="86">
+        	<component name="pageNumber" />
+        	<component name="indicator" />
+            <formatString>5n[/2n]</formatString>            
+        </field>
+        <field name="28C" fid="219">
+            <component name="entryNumber" />
+            <component name="pageNumber" />
+            <formatString>5n[/5n]</formatString>
+        </field>
+        <field name="28D" fid="159">
+            <component name="messageIndex" />
+            <component name="total" />
+            <formatString>5n/5n</formatString>
+        </field>
+        <field name="28E" fid="77">
+            <component name="pageNumber" />
+            <component name="continationIndicator" />
+            <formatString>5n/4!c</formatString>
+        </field>
+        
+        <!-- 29 -->
+        <field name="29A" fid="115">
+            <component name="narrative" />
+            <formatString>4*35x</formatString>
+        </field>
+        <field name="29B" fid="116">
+            <component name="narrative" />
+            <formatString>4*35x</formatString>
+        </field>
+        <field name="29C" fid="214">
+            <component name="location" />
+            <formatString>35x</formatString>
+        </field>
+
+        <!-- 30 -->        
+        <field name="30" fid="82">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="30F" fid="213">
+            <component name="date" />
+            <formatString>8!n</formatString>
+        </field>
+        <field name="30P" fid="217">
+            <component name="date" />
+            <formatString>8!n</formatString>
+        </field>
+        <field name="30T" fid="190">
+            <component name="date" />
+            <formatString>8!n</formatString>
+        </field>
+        <field name="30V" fid="191">
+            <component name="date" />
+            <formatString>8!n</formatString>
+        </field>
+        <field name="30X" fid="212">
+            <component name="date" />
+            <formatString>8!n</formatString>
+        </field>
+        
+        <!-- 31 -->
+        <field name="31C" fid="103">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="31E" fid="101">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="31F" fid="117">
+            <component name="date" />
+            <component name="periodDate" />
+            <component name="periodDetails" />
+            <formatString>6!n[/6!n][//35x]</formatString>
+        </field>
+        <field name="31L" fid="102">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="31P" fid="119">
+            <component name="date" />
+            <component name="place" />
+            <formatString>6!n[29x]</formatString>
+        </field>
+        <field name="31S" fid="104">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="31X" fid="121">
+            <component name="date" />
+            <component name="time" />
+            <component name="code" />
+            <formatString>[6!n[4!n]][7!a]</formatString>
+        </field>
+        
+        <!-- 32 -->
+        <field name="32A" fid="126">
+            <component name="date" />
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>6!n3!a15d</formatString>
+        </field>
+        <field name="32B" fid="127">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="32G" fid="108">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="32J" fid="170">
+            <component name="amount" />
+            <formatString>15d</formatString>
+        </field>
+        <field name="32M" fid="107">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        
+        <!-- 33 -->
+        <field name="33B" fid="157">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="33S" fid="125">
+            <component name="code" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="33T" fid="105">
+            <component name="currency" />
+            <component name="price" />
+            <formatString>3!a15d</formatString>
+        </field>
+
+        <!-- 34 -->
+        <field name="34A" fid="112">
+            <component name="date" />
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>6!n3!a15d</formatString>
+        </field>
+        <field name="34B" fid="85">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+
+        <!-- 35 -->        
+        <field name="35A" fid="96">
+            <component name="type" />
+            <component name="quantity" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="35B" fid="16">
+            <component name="identificationOfSecurity" />
+            <component name="descriptionOfSecurity" />
+            <!-- NOTE:
+            The original formatString as been replaced by the customized one, which is needed for parsing 
+            [ISIN1!e12!c]
+            [4*35x]
+             -->
+            <formatString>[ISIN1!e12!c1!r1!w][4*35x]</formatString>
+        </field>
+        <field name="35C" fid="97">
+            <component name="number" />
+            <formatString>3!c</formatString>
+        </field>
+        <field name="35D" fid="98">
+            <component name="date" />
+            <formatString>6!n</formatString>
+        </field>
+        <field name="35E" fid="99">
+            <component name="narrative" />
+            <formatString>6*50x</formatString>
+        </field>
+        <field name="35F" fid="87">
+            <component name="narrative" />
+            <formatString>35*50x</formatString>
+        </field>
+        <field name="35H" fid="83">
+            <component name="sign" />        
+            <component name="currency" />        
+            <component name="quantity" />        
+            <formatString>[N]3!a15d</formatString>
+        </field>
+        <field name="35L" fid="106">
+            <component name="narrative" />        
+            <formatString>4*35x</formatString>
+        </field>
+        <field name="35N" fid="122">
+            <component name="type" />        
+            <component name="quantity" />        
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="35S" fid="1">
+            <component name="type" />        
+            <component name="quantity" />        
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="35U" fid="100">
+            <component name="currency" />        
+            <component name="price" />        
+            <component name="period" />        
+            <formatString>3!a15d[1!a]</formatString>
+        </field>
+
+        <!-- 36 -->        
+        <field name="36" fid="111">
+            <component name="rate" />
+            <formatString>12d</formatString>
+        </field>
+        <field name="36A" fid="216">
+            <component name="rate" />
+            <formatString>12d</formatString>
+        </field>
+        <field name="36B" fid="17">
+            <component name="qualifier" />
+            <component name="quantityTypeCode" />
+            <component name="quantity" />
+            <formatString>:4!c//4!c/15d</formatString>
+        </field>
+        <field name="36C" fid="62">
+            <component name="qualifier" />
+            <component name="quantityCode" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        <field name="36E" fid="48">
+            <component name="qualifier" />
+            <component name="quantityTypeCode" />
+            <component name="sign" />
+            <component name="quantity" />
+            <formatString>:4!c//4!c/[N]15d</formatString>
+        </field>
+        
+        <!-- 37 -->
+        <field name="37A" fid="128">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37B" fid="129">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37C" fid="130">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37D" fid="131">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37E" fid="26">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37F" fid="9">
+            <component name="rate" />
+            <component name="endDate" />
+            <component name="period" />
+            <component name="number" />
+            <component name="information" />
+            <formatString>12d[//6!n1!a3n][/16x]</formatString>
+        </field>
+        <field name="37J" fid="123">
+            <component name="rate" />
+            <formatString>12d</formatString>
+        </field>
+        
+        <!-- 39 -->
+        <field name="39P" fid="218">
+            <component name="type" />
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>4!c/3!a15d</formatString>
+        </field>
+        
+        <!-- 44 -->
+        <field name="44A" fid="168">
+            <component name="transactionReferenceNumber" />
+            <formatString>65x</formatString>
+        </field>
+        
+        <!-- 50 -->
+        <field name="50" fid="165">
+            <component name="nameAndAddress" />
+            <formatString>4*35x</formatString>
+        </field>
+        <field name="50A" fid="149">
+            <component name="account" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/34x]
+            4!a2!a2!c[3!c]
+            NEW: 
+            [/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+             <formatString>[/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="50C" fid="166">
+            <component name="identifierCode" />
+            <formatString>4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="50F" fid="150">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            35x
+            4*35x
+            
+            NEW:
+            35x1!r1!w4*35x
+             -->
+            <formatString>35x1!r1!w4*35x</formatString>
+        </field>
+        <field name="50K" fid="151">
+            <component name="account" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/34x]
+            4*35x
+            NEW:
+            [/34x1!r1!w]4*35x
+             -->
+            <formatString>[/34x1!r1!w]4*35x</formatString>
+        </field>
+        
+        <!-- 51 -->
+        <field name="51A" fid="160">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        
+        <!-- 52 -->
+        <field name="52A" fid="142">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="52C" fid="162">
+            <component name="partyIdentifier" />
+            <formatString>/34x</formatString>
+        </field>
+        <field name="52D" fid="143">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="52G" fid="161">
+            <component name="account" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            /34x
+            4!a2!a2!c[3!c]
+            NEW:
+            /34x1!r1!w4!a2!a2!c[3!c]
+             -->
+             <formatString>/34x1!r1!w4!a2!a2!c[3!c]</formatString>
+        </field>
+        
+        <!-- 53 -->
+        <field name="53A" fid="89">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c] 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="53C" fid="90">
+            <component name="account" />
+            <formatString>/34x</formatString>
+        </field>
+        <field name="53B" fid="138">
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+            NEW:
+            [/1!a][/34x1!r1!w][35x]
+             -->
+             <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="53D" fid="91">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="53J" fid="192">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 54 -->
+        <field name="54A" fid="144">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW: 
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="54B" fid="145">
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+
+            NEW:
+            [/1!a][/34x1!r1!w][35x]
+             -->
+             <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="54D" fid="146">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            NEW: 
+            [/1!a][/34x1!r1!w]4*35x
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        
+        
+        
+        <!-- 56 -->
+        <field name="56A" fid="139">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c] 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="56C" fid="152">
+            <component name="partyIdentifier" />
+            <formatString>/34x</formatString>
+        </field>
+        <field name="56D" fid="140">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            
+            NEW: 
+            [/1!a][/34x1!r1!w]4*35x
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="56J" fid="193">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 57 -->
+        <field name="57A" fid="92">
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="57B" fid="93">
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+            NEW:
+            [/1!a][/34x1!r1!w][35x]
+             -->
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="57C" fid="153">
+            <component name="partyIdentifier" />
+            <formatString>/34x</formatString>
+        </field>
+        <field name="57D" fid="94">
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x
+             -->        
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="57J" fid="194">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+       
+        <!-- 58 -->
+        <field name="58A" fid="147">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            NEW: 
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="58B" fid="177">
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+            NEW:
+            [/1!a][/34x1!r1!w][35x]
+             -->
+             <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="58D" fid="148">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="58J" fid="195">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+       
+        <!-- 59 -->
+        <field name="59" fid="154">
+            <component name="account" />       
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/34x]
+            4*35x
+            NEW:
+            [/34x1!r1!w]4*35x
+             -->
+            <formatString>[/34x1!r1!w]4*35x</formatString>       
+        </field>
+        <field name="59A" fid="155">
+            <component name="account" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/34x]
+            4!a2!a2!c[3!c]
+            NEW:
+            [/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+       
+        <!-- 67 -->
+        <field name="67A" fid="137">
+            <component name="date1" />
+            <component name="date2" />
+            <formatString>6!n[/6!n]</formatString>
+        </field>
+       
+        <!-- 69 -->
+        <field name="69A" fid="50">
+            <component name="qualifier" />
+            <component name="date1" />
+            <component name="date2" />
+            <formatString>:4!c//8!n/8!n</formatString>
+        </field>
+        <field name="69B" fid="51">
+            <component name="qualifier" />
+            <component name="date1" />
+            <component name="time1" />
+            <component name="date2" />
+            <component name="time2" />
+            <formatString>:4!c//8!n6!n/8!n6!n</formatString>
+        </field>
+        <field name="69C" fid="52">
+            <component name="qualifier" />
+            <component name="date" />
+            <component name="dateCode" />
+            <formatString>:4!c//8!n/4!c</formatString>
+        </field>
+        <field name="69D" fid="53">
+            <component name="qualifier" />
+            <component name="date" />
+            <component name="time" />
+            <component name="dateCode" />
+            <formatString>:4!c//8!n6!n/4!c</formatString>
+        </field>
+        <field name="69E" fid="54">
+            <component name="qualifier" />
+            <component name="dateCode" />
+            <component name="date" />
+            <formatString>:4!c//4!c/8!n</formatString>
+        </field>
+        <field name="69F" fid="55">
+            <component name="qualifier" />
+            <component name="dateCode" />
+            <component name="date" />
+            <component name="time" />
+            <formatString>:4!c//4!c/8!n6!n</formatString>
+        </field>
+        <field name="69J" fid="56">
+            <component name="qualifier" />
+            <component name="dateCode" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        
+        <!-- 70 -->
+        <field name="70" fid="156">
+            <component name="narrative" />
+            <formatString>4*35x</formatString>
+        </field>
+        <field name="70C" fid="18">
+            <component name="qualifier" />
+            <component name="narrative" />
+            <formatString>:4!c//4*35x</formatString>
+        </field>
+        <field name="70D" fid="19">
+            <component name="qualifier" />
+            <component name="narrative" />
+            <formatString>:4!c//6*35x</formatString>
+        </field>
+        <field name="70E" fid="20">
+            <component name="qualifier" />
+            <component name="narrative" />
+            <formatString>:4!c//10*35x</formatString>
+        </field>
+        <field name="70F" fid="134">
+            <component name="qualifier" />
+            <component name="narrative" />
+            <formatString>:4!c//8000z</formatString>
+        </field>
+        <field name="70G" fid="64">
+            <component name="qualifier" />
+            <component name="narrative" />
+            <formatString>:4!c//10*35z</formatString>
+        </field>
+
+        <!-- 71 -->
+        <field name="71B" fid="110">
+            <component name="narrative" />
+            <formatString>6*35x</formatString>
+        </field>
+        <field name="71C" fid="109">
+            <component name="narrative" />
+            <formatString>6*35x</formatString>
+        </field>
+        <field name="71F" fid="172">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="71G" fid="171">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="71H" fid="173">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="71J" fid="174">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="71K" fid="176">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        <field name="71L" fid="175">
+            <component name="currency" />
+            <component name="amount" />
+            <formatString>3!a15d</formatString>
+        </field>
+        
+        <!-- 72 -->
+        <field name="72" fid="95">
+            <component name="narrative"/>
+            <formatString>6*35x</formatString>
+        </field>
+        
+        <!-- 75 -->
+        <field name="75" fid="113">
+            <component name="narrative"/>
+            <formatString>6*35x</formatString>
+        </field>
+
+        <!-- 77 -->
+        <field name="77D" fid="2">
+            <component name="narrative"/>
+            <formatString>6*35x</formatString>
+        </field>
+        <field name="77H" fid="188">
+            <component name="typeOfAgreement" />
+            <component name="date" />
+            <component name="version" />
+            <formatString>6a[/8!n][//4!n]</formatString>
+        </field>
+        
+        <!-- 80 -->
+        <field name="80C" fid="84">
+            <component name="narrative" />
+            <formatString>6*35x</formatString>
+        </field>
+        
+        <!-- 82 -->
+        <field name="82A" fid="183">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL: 
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW: 
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="82D" fid="184">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="82J" fid="185">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 83 -->
+        <field name="83A" fid="135">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="83C" fid="114">
+            <component name="account" />
+            <formatString>/34x</formatString>
+        </field>
+        <field name="83D" fid="136">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="83J" fid="187">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 84 -->
+        <field name="84A" fid="200">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW: 
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="84B" fid="201">
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+
+            NEW:
+            [/1!a][/34x1!r1!w][35x] 
+             -->
+            <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="84D" fid="202">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="84J" fid="203">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 85 -->
+
+
+Option J    5*40x   (Party Identification)
+        
+        <field name="85A" fid="204">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL: 
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="85B" fid="205">
+            <component name="partyIdentifier" />
+            <component name="location" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            [35x]
+            
+            NEW:
+            [/1!a][/34x1!r1!w][35x] 
+             -->
+             <formatString>[/1!a][/34x1!r1!w][35x]</formatString>
+        </field>
+        <field name="85D" fid="206">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+             <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="85J" fid="207">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+
+        <!-- 87 -->
+        <field name="87A" fid="118">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="87D" fid="120">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="87J" fid="186">
+            <component name="partyIdentification"></component>
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 88 -->
+        <field name="88A" fid="208">
+            <component name="partyIdentifier" />
+            <component name="identifierCode" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4!a2!a2!c[3!c]
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4!a2!a2!c[3!c]
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="88D" fid="209">
+            <component name="partyIdentifier" />
+            <component name="nameAndAddress" />
+            <!-- 
+            ORIGINAL:
+            [/1!a][/34x]
+            4*35x
+            
+            NEW:
+            [/1!a][/34x1!r1!w]4*35x 
+             -->
+            <formatString>[/1!a][/34x1!r1!w]4*35x</formatString>
+        </field>
+        <field name="88J" fid="210">
+            <component name="partyIdentification" />
+            <formatString>5*40x</formatString>
+        </field>
+        
+        <!-- 90 -->
+        <field name="90A" fid="21">
+            <component name="qualifier" />
+            <component name="percentageTypeCode" />
+            <component name="price" />
+            <formatString>:4!c//4!c/15d</formatString>
+        </field>
+        <field name="90B" fid="22">
+            <component name="qualifier" />
+            <component name="amountTypeCode" />
+            <component name="currencyCode" />
+            <component name="price" />
+            <formatString>:4!c//4!c/3!a15d</formatString>
+        </field>
+        <field name="90E" fid="61">
+            <component name="qualifier" />
+            <component name="priceCode" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        <field name="90F" fid="66">
+            <component name="qualifier" />
+            <component name="amountTypeCode" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <component name="quantityTypeCode" />
+            <component name="quantity" />
+            <formatString>:4!c//4!c/3!a15d/4!c/15d</formatString>
+        </field>
+        <field name="90J" fid="67">
+            <component name="qualifier" />
+            <component name="amountTypeCode" />
+            <component name="currencyCode1" />
+            <component name="amount1" />
+            <component name="currencyCode2" />
+            <component name="amount2" />
+            <formatString>:4!c//4!c/3!a15d/3!a15d</formatString>
+        </field>
+        <field name="90K" fid="71">
+            <component name="qualifier" />
+            <component name="indexPoints" />
+            <formatString>:4!c//15d</formatString>
+        </field>
+        
+        <!-- 92 -->
+        <field name="92A" fid="23">
+            <component name="qualifier" />
+            <component name="sign" />
+            <component name="rate" />
+            <formatString>:4!c//[N]15d</formatString>
+        </field>
+        <field name="92B" fid="24">
+            <component name="qualifier" />
+            <component name="firstCurrencyCode" />
+            <component name="secondCurrencyCode" />
+            <component name="rate" />
+            <formatString>:4!c//3!a/3!a/15d</formatString>
+        </field>
+        <field name="92C" fid="25">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="rateNumber" />
+            <formatString>:4!c/[8c]/24x</formatString>
+        </field>
+        <field name="92D" fid="49">
+            <component name="qualifier" />
+            <component name="quantity1" />
+            <component name="quantity2" />
+            <formatString>:4!c//15d/15d</formatString>
+        </field>
+        <field name="92F" fid="57">
+            <component name="qualifier" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <formatString>:4!c//3!a15d</formatString>
+        </field>
+        <field name="92J" fid="58">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="rateTypeCode" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <component name="rateStatus" />
+            <formatString>:4!c/[8c]/4!c/3!a15d[/4!c]</formatString>
+        </field>
+        <field name="92K" fid="59">
+            <component name="qualifier" />
+            <component name="rateTypeCode" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        <field name="92L" fid="69">
+            <component name="qualifier" />
+            <component name="firstCurrencyCode" />
+            <component name="amount1" />
+            <component name="secondCurrencyCode" />
+            <component name="amount2" />
+            <formatString>:4!c//3!a15d/3!a15d</formatString>
+        </field>
+        <field name="92M" fid="60">
+            <component name="qualifier" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <component name="quantity" />
+            <formatString>:4!c//3!a15d/15d</formatString>
+        </field>
+        <field name="92N" fid="70">
+            <component name="qualifier" />
+            <component name="quantity" />
+            <component name="currencyCode" />
+            <component name="amount" />
+            <formatString>:4!c//15d/3!a15d</formatString>
+        </field>
+        
+        <!-- 93 -->
+        <field name="93A" fid="78">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="subBalanceType" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        <field name="93B" fid="46">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="quantityTypeCode" />
+            <component name="sign" />
+            <component name="balance" />
+            <formatString>:4!c/[8c]/4!c/[N]15d</formatString>
+        </field>
+        <field name="93C" fid="47">
+            <component name="qualifier" />
+            <component name="quantityTypeCode" />
+            <component name="balanceTypeCode" />
+            <component name="sign" />
+            <component name="balance" />
+            <formatString>:4!c//4!c/4!c/[N]15d</formatString>
+        </field>
+        
+        <!-- 94 -->
+        <field name="94A" fid="179">
+            <component name="scope" />
+            <formatString>4!c</formatString>
+        </field>
+        <field name="94B" fid="27">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="placeCode" />
+            <component name="narrative" />
+            <formatString>:4!c/[8c]/4!c[/30x]</formatString>
+        </field>
+        <field name="94C" fid="28">
+            <component name="qualifier" />
+            <component name="country" />
+            <formatString>:4!c//2!a</formatString>
+        </field>
+        <field name="94D" fid="75">
+            <component name="qualifier" />
+            <component name="countryCode" />
+            <component name="place" />
+            <formatString>:4!c//[2!a]/35x</formatString>
+        </field>
+        <field name="94F" fid="29">
+            <component name="qualifier" />
+            <component name="placeCode" />
+            <component name="identifierCode" />
+            <formatString>:4!c//4!c/4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="94G" fid="63">
+            <component name="qualifier" />
+            <component name="address" />
+            <formatString>:4!c//2*35x</formatString>
+        </field>
+        <field name="94H" fid="43">
+            <component name="qualifier" />
+            <component name="identifierCode" />
+            <formatString>:4!c//4!a2!a2!c[3!c]</formatString>
+        </field>
+        
+        <!-- 95 -->
+        <field name="95C" fid="30">
+            <component name="qualifier" />
+            <component name="countryCode" />
+            <formatString>:4!c//2!a</formatString>
+        </field>
+        <field name="95P" fid="31">
+            <component name="qualifier" />
+            <component name="identifierCode" />
+            <formatString>:4!c//4!a2!a2!c[3!c]</formatString>
+        </field>
+        <field name="95Q" fid="32">
+            <component name="qualifier" />
+            <component name="nameAndAddress" />
+            <formatString>:4!c//4*35x</formatString>
+        </field>
+        <field name="95R" fid="33">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="proprietaryCode" />
+            <formatString>:4!c/8c/34x</formatString>
+        </field>
+        <field name="95S" fid="34">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="typeOfID" />
+            <component name="countryCode" />
+            <component name="alternateID" />
+            <formatString>:4!c/[8c]/4!c/2!a/30x</formatString>
+        </field>
+        <field name="95U" fid="76">
+            <component name="qualifier" />
+            <component name="name" />
+            <formatString>:4!c//3*35x</formatString>
+        </field>
+        
+        <!-- 97 -->
+        <field name="97A" fid="35">
+            <component name="qualifier" />
+            <component name="accountNumber" />
+            <formatString>:4!c//35x</formatString>
+        </field>
+        <field name="97B" fid="36">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="accountTypeCode" />
+            <component name="accountNumber" />
+            <formatString>:4!c/[8c]/4!c/35x</formatString>
+        </field>
+        <field name="97C" fid="45">
+            <component name="qualifier" />
+            <component name="accountCode" />
+            <formatString>:4!c//4!c</formatString>
+        </field>
+        <field name="97E" fid="44">
+            <component name="qualifier" />
+            <component name="internationalBankAccountNumber" />
+            <formatString>:4!c//34x</formatString>
+        </field>
+        
+        <!-- 98 -->
+        <field name="98A" fid="37">
+            <component name="qualifier" />
+            <component name="date" />
+            <formatString>:4!c//8!n</formatString>
+        </field>
+        <field name="98B" fid="38">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="dateCode" />
+            <formatString>:4!c/[8c]/4!c</formatString>
+        </field>
+        <field name="98C" fid="39">
+            <component name="qualifier" />
+            <component name="date" />
+            <component name="time" />
+            <formatString>:4!c//8!n6!n</formatString>
+        </field>
+        <field name="98E" fid="40">
+            <component name="qualifier" />
+            <component name="date" />
+            <component name="time" />
+            <component name="decimals" />
+            <component name="uTCIndicator" />
+            <formatString>:4!c//8!n6!n[,3n][/[N]2!n[2!n]]</formatString>
+        </field>
+        <field name="98F" fid="65">
+            <component name="qualifier" />
+            <component name="dataSourceScheme" />
+            <component name="dateCode" />
+            <component name="time" />
+            <formatString>:4!c/[8c]/4!c6!n</formatString>
+        </field>
+        
+        <!-- 99 -->
+        <field name="99A" fid="41">
+            <component name="qualifier" />
+            <component name="sign" />
+            <component name="number" />
+            <formatString>:4!c//[N]3!n</formatString>
+        </field>
+        <field name="99B" fid="42">
+            <component name="qualifier" />
+            <component name="number" />
+            <formatString>:4!c//3!n</formatString>
+        </field>
+       
+    </fields>
+</fieldDictionary>
+<!--
+TODO:
+
+This file is the master file which contains all the field information. 
+
+mt541_schema.xml should be referring to the fields in here.
+
+
+Refactor later: 
+mt541_schema.xml should only have the structure of the mt541, but all fields information 
+should be stored in here.
+
+TODO: Should this file be moved to etc directory?
+-->

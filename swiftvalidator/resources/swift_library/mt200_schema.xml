@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="200" name="Financial Institution Transfer for its Own Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" shortName="DUMMY" name="" status="M" repetitive="N">
+        <field id="1" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Transaction Reference Number</detailedFieldName>
+            <content>
+                <format>20</format>
+            </content>
+        </field>
+        <field id="2" tag="32A" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Value Date, Currency Code, Amount</detailedFieldName>
+            <content>
+                <format>32A</format>
+            </content>
+        </field>
+        <field id="3" tag="53B" status="O" repetitive="N">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Sender's Correspondent</detailedFieldName>
+            <content>
+                <format>53B</format>
+            </content>
+        </field>
+        <field id="4" tag="56a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Intermediary</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>56A</format>
+                </option>
+                <option name="D">
+                    <format>56D</format>
+                </option>
+            </options>
+        </field>
+        <field id="5" tag="57a" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account With Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>57A</format>
+                </option>
+                <option name="B">
+                    <format>57B</format>
+                </option>
+                <option name="D">
+                    <format>57D</format>
+                </option>
+            </options>
+        </field>
+        <field id="6" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+    </sequence>
+</mt>

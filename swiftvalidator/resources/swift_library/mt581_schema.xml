@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="581" name="Collateral Adjustment Message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <field id="1" tag="20" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Transaction Reference Number</detailedFieldName>
+        <content>
+            <format>20</format>
+        </content>
+    </field>
+    <field id="2" tag="21" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Related Reference</detailedFieldName>
+        <content>
+            <format>21</format>
+        </content>
+    </field>
+    <field id="3" tag="23" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Further Identification</detailedFieldName>
+        <content>
+            <format>23</format>
+        </content>
+    </field>
+    <field id="4" tag="30" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Date of Adjustment</detailedFieldName>
+        <content>
+            <format>30</format>
+        </content>
+    </field>
+    <field id="5" tag="35H" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Adjustment to the Collateral</detailedFieldName>
+        <content>
+            <format>35H</format>
+        </content>
+    </field>
+    <field id="6" tag="35B" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Identification of Securities Used as Collateral</detailedFieldName>
+        <content>
+            <format>35B</format>
+        </content>
+    </field>
+    <field id="7" tag="80C" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Reason for Collateral Adjustment</detailedFieldName>
+        <content>
+            <format>80C</format>
+        </content>
+    </field>
+    <field id="8" tag="34B" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Outstanding Collateral Value</detailedFieldName>
+        <content>
+            <format>34B</format>
+        </content>
+    </field>
+    <field id="9" tag="72" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+        <content>
+            <format>72</format>
+        </content>
+    </field>
+</mt>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="579" name="Certificate Numbers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <field id="1" tag="28" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Page Number/Continuation Indicator</detailedFieldName>
+        <content>
+            <format>28</format>
+        </content>
+    </field>
+    <field id="2" tag="20" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Transaction Reference Number</detailedFieldName>
+        <content>
+            <format>20</format>
+        </content>
+    </field>
+    <field id="3" tag="21" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Related Reference</detailedFieldName>
+        <content>
+            <format>21</format>
+        </content>
+    </field>
+    <field id="4" tag="35F" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Certificate Number(s)</detailedFieldName>
+        <content>
+            <format>35F</format>
+        </content>
+    </field>
+</mt>

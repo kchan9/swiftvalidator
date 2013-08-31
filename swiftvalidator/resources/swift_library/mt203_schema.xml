@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="203" name="Multiple General Financial Institution Transfer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" shortName="DUMMY" name="" status="M" repetitive="N">
+        <field id="1" tag="19" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sum of Amounts</detailedFieldName>
+            <content>
+                <format>19</format>
+            </content>
+        </field>
+        <field id="2" tag="30" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Value Date</detailedFieldName>
+            <content>
+                <format>30</format>
+            </content>
+        </field>
+        <field id="3" tag="52a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Ordering Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>52A</format>
+                </option>
+                <option name="D">
+                    <format>52D</format>
+                </option>
+            </options>
+        </field>
+        <field id="4" tag="53a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender's Correspondent</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>53A</format>
+                </option>
+                <option name="B">
+                    <format>53B</format>
+                </option>
+                <option name="D">
+                    <format>53D</format>
+                </option>
+            </options>
+        </field>
+        <field id="5" tag="54a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Receiver's Correspondent</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>54A</format>
+                </option>
+                <option name="B">
+                    <format>54B</format>
+                </option>
+                <option name="D">
+                    <format>54D</format>
+                </option>
+            </options>
+        </field>
+        <field id="6" tag="72" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+        <sequence id="2" status="M" repetitive="Y" parentSequenceId="1" shortName="DUMMY" name="">
+            <field id="7" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Transaction Reference Number</detailedFieldName>
+                <content>
+                    <format>20</format>
+                </content>
+            </field>
+            <field id="8" tag="21" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Related Reference</detailedFieldName>
+                <content>
+                    <format>21</format>
+                </content>
+            </field>
+            <field id="9" tag="32B" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Currency Code, Amount</detailedFieldName>
+                <content>
+                    <format>32B</format>
+                </content>
+            </field>
+            
+            <field id="10" tag="56a" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Intermediary</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>56A</format>
+                    </option>
+                    <option name="D">
+                        <format>56D</format>
+                    </option>
+                </options>
+            </field>
+            <field id="11" tag="57a" status="O" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Account With Institution</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>57A</format>
+                    </option>
+                    <option name="B">
+                        <format>57B</format>
+                    </option>
+                    <option name="D">
+                        <format>57D</format>
+                    </option>
+                </options>
+            </field>
+            <field id="12" tag="58a" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Beneficiary Institution</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>58A</format>
+                    </option>
+                    <option name="D">
+                        <format>58D</format>
+                    </option>
+                </options>
+            </field>
+            <field id="13" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+                <content>
+                    <format>72</format>
+                </content>
+            </field>
+        </sequence>
+    </sequence>
+</mt>

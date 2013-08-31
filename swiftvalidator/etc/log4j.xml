@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+    <!-- ===================================================================== -->
+    <!--                                                                       -->
+    <!--  Log4j Configuration                                                  -->
+    <!--                                                                       -->
+    <!-- ===================================================================== -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    
+    <!-- ****************************** -->
+    <!-- Console Out Appender           -->
+    <!-- ****************************** -->
+    <appender name="CONSOLE_OUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- The default pattern: Date Priority [Category] Message\n -->
+            <!-- param name="ConversionPattern" value="%t %d{ABSOLUTE} %-5p [%c{1}] %m%n" /-->
+            <param name="ConversionPattern" value="%t %d{ABSOLUTE} %-5p [%c-%M] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG" />
+            <param name="LevelMax" value="WARN" />
+        </filter>
+    </appender>
+    
+    <!-- ****************************** -->
+    <!-- Console Error Appender         -->
+    <!-- ****************************** -->
+    <appender name="CONSOLE_ERR" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.err" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- The default pattern: Date Priority [Category] Message\n -->
+            <param name="ConversionPattern" value="%t %d{ABSOLUTE} %-5p [%c{1}] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+            <param name="LevelMax" value="FATAL" />
+        </filter>
+    </appender>
+
+    <!-- ****************************** -->
+    <!-- File Appenders				    -->
+    <!-- ****************************** -->
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Append" value="true" />
+        <param name="File" value="../log/swiftvalidator.log" />
+        <!-- Rollover at midnight each day -->
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%t %d{ABSOLUTE} %-5p [%c{1}] %m%n" />
+        </layout>
+    </appender>
+
+    <!-- ======================= -->
+    <!-- Setup the categories    -->
+    <!-- ======================= -->
+    <logger name="org.springframework">
+        <level value="INFO" />
+    </logger>
+    <logger name="org.hibernate">
+    	<level value="INFO" />
+    </logger>
+    <logger name="com.mchange">
+    	<level value="INFO" />
+    </logger>
+    
+
+    <!-- ======================= -->
+    <!-- Setup the Root category -->
+    <!-- ======================= -->
+    <root>
+        <priority value="INFO" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE_OUT" />
+        <appender-ref ref="CONSOLE_ERR" />
+    </root>
+
+
+</log4j:configuration>

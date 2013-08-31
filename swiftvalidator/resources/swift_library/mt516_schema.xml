@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="516" name="Securities Loan Confirmation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    <sequence id="1" nextSequenceId="2" shortName="A"
+        name="Mandatory Sequence A Securities Loan/Recall/Return Identification" repetitive="N" status="M">
+        <field id="1" tag="20" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Transaction Reference Number</detailedFieldName>
+            <content>
+                <format>20</format>
+            </content>
+        </field>
+        <field id="2" tag="21" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Related Reference</detailedFieldName>
+            <content>
+                <format>21</format>
+            </content>
+        </field>
+        <field id="3" tag="23" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Further Identification</detailedFieldName>
+            <content>
+                <format>23</format>
+            </content>
+        </field>
+        <field id="4" tag="31P" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Date Loan/Recall/Return Agreed</detailedFieldName>
+            <content>
+                <format>31P</format>
+            </content>
+        </field>
+        <field id="5" tag="83C" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Safekeeping Account</detailedFieldName>
+            <content>
+                <format>83C</format>
+            </content>
+        </field>
+        <field id="6" tag="35B" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Identification of Securities</detailedFieldName>
+            <content>
+                <format>35B</format>
+            </content>
+        </field>
+        <field id="7" tag="35A" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Quantity of Securities</detailedFieldName>
+            <content>
+                <format>35A</format>
+            </content>
+        </field>
+        <field id="8" tag="31L" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Payable Date</detailedFieldName>
+            <content>
+                <format>31L</format>
+            </content>
+        </field>
+        <field id="9" tag="31X" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Ex Date</detailedFieldName>
+            <content>
+                <format>31X</format>
+            </content>
+        </field>
+        <field id="10" tag="30" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Effective Date</detailedFieldName>
+            <content>
+                <format>30</format>
+            </content>
+        </field>
+        <field id="11" tag="31F" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Expiry and Option Date of Loan</detailedFieldName>
+            <content>
+                <format>31F</format>
+            </content>
+        </field>
+        <field id="12" tag="87a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Receiver/Deliverer of Securities</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>87A</format>
+                </option>
+                <option name="D">
+                    <format>87D</format>
+                </option>
+            </options>
+        </field>
+        <field id="13" tag="35N" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Quantity of Securities Recalled/Returned</detailedFieldName>
+            <content>
+                <format>35N</format>
+            </content>
+        </field>
+        <field id="14" tag="33T" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Market Price of Securities</detailedFieldName>
+            <content>
+                <format>33T</format>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence A -->
+    <sequence id="2" nextSequenceId="3" shortName="B" name="Optional Sequence B Collateral Arrangements"
+        repetitive="N" status="O">
+        <field id="15" tag="37J" status="O" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Interest Rate on Securities</detailedFieldName>
+            <content>
+                <format>37J</format>
+            </content>
+        </field>
+        <field id="16" tag="26H" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Collateral Type</detailedFieldName>
+            <content>
+                <format>26H</format>
+            </content>
+        </field>
+        <field id="17" tag="33S" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Collateral Requirement</detailedFieldName>
+            <content>
+                <format>33S</format>
+            </content>
+        </field>
+        <field id="18" tag="32a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Cash Collateral Amount</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>32A</format>
+                </option>
+                <option name="B">
+                    <format>32B</format>
+                </option>
+            </options>
+        </field>
+        <field id="19" tag="37a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Rebate Agreed</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>37A</format>
+                </option>
+                <option name="B">
+                    <format>37B</format>
+                </option>
+                <option name="C">
+                    <format>37C</format>
+                </option>
+                <option name="D">
+                    <format>37D</format>
+                </option>
+                <option name="E">
+                    <format>37E</format>
+                </option>
+                <option name="F">
+                    <format>37F</format>
+                </option>
+            </options>
+        </field>
+        <field id="20" tag="57a" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Account With Institution</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>57A</format>
+                </option>
+                <option name="B">
+                    <format>57B</format>
+                </option>
+                <option name="D">
+                    <format>57D</format>
+                </option>
+            </options>
+        </field>
+        <field id="21" tag="35S" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Quantity of Securities Transferred as Collateral</detailedFieldName>
+            <content>
+                <format>35S</format>
+            </content>
+        </field>
+        <field id="22" tag="35B" status="O" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Identification of Securities</detailedFieldName>
+            <content>
+                <format>35B</format>
+            </content>
+        </field>
+        <field id="23" tag="87a" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Receiver/Deliverer of Securities</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>87A</format>
+                </option>
+                <option name="D">
+                    <format>87D</format>
+                </option>
+            </options>
+        </field>
+    </sequence>
+    <sequence id="3" shortName="C" name="Optional Sequence C" status="O" repetitive="N">
+        <field id="24" tag="77D" status="O" repetitive="N" firstOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Special Terms and Conditions</detailedFieldName>
+            <content>
+                <format>77D</format>
+            </content>
+        </field>
+        <field id="25" tag="72" status="O" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+            <content>
+                <format>72</format>
+            </content>
+        </field>
+    </sequence>
+</mt>

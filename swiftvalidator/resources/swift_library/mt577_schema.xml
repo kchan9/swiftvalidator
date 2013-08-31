@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="577" name="Statement of Numbers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    
+    <field id="1" tag="28" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Page Number/Continuation Indicator</detailedFieldName>
+        <content>
+            <format>28</format>
+        </content>
+    </field>
+    
+    <field id="2" tag="20" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Transaction Reference Number</detailedFieldName>
+        <content>
+            <format>20</format>
+        </content>
+    </field>
+    
+    <field id="3" tag="21" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Related Reference</detailedFieldName>
+        <content>
+            <format>21</format>
+        </content>
+    </field>
+    <field id="4" tag="83a" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Safekeeping Account</detailedFieldName>
+        <options>
+            <option name="A">
+                <format>83A</format>
+            </option>
+            <option name="C">
+                <format>83C</format>
+            </option>
+            <option name="D">
+                <format>83D</format>
+            </option>
+        </options>
+    </field>
+    <field id="5" tag="67A" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Statement Period</detailedFieldName>
+        <content>
+            <format>67A</format>
+        </content> 
+    </field>
+    <field id="6" tag="35A" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Quantity of Securities</detailedFieldName>
+        <content>
+            <format>35H</format>
+        </content>
+    </field>
+    <field id="7" tag="35B" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Identification of Securities</detailedFieldName>
+        <content>
+            <format>35B</format>
+        </content>
+    </field>
+    <field id="8" tag="35F" status="M" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Certificate Number(s)</detailedFieldName>
+        <content>
+            <format>35F</format>
+        </content>
+    </field>
+    <field id="9" tag="72" status="O" repetitive="N">
+        <qualifier></qualifier>
+        <genericFieldName></genericFieldName>
+        <detailedFieldName>Sender to Receiver Information</detailedFieldName>
+        <content>
+            <format>72</format>
+        </content>
+    </field>
+</mt>

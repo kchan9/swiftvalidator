@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mt id="575" name="Report of Combined Activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="mt_schema.xsd">
+    
+    <sequence id="1" shortName="A" name="Mandatory Sequence A General Information" status="M" repetitive="N"
+        nextSequenceId="3">
+        
+        <field id="1" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Start of Block</detailedFieldName>
+            <content>
+                <value>GENL</value>
+            </content>
+        </field>
+        <field id="2" tag="28E" status="M" repetitive="N">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>Page Number/Continuation Indicator</detailedFieldName>
+            <content>
+                <format>28E</format>
+            </content>
+        </field>
+        <field id="3" tag="13A" status="O" repetitive="N">
+            <qualifier>
+                <value>STAT</value>
+            </qualifier>
+            <genericFieldName>Number Identification</genericFieldName>
+            <detailedFieldName>Statement Number</detailedFieldName>
+            <content>
+                <format>13A</format>
+            </content>
+        </field>
+        <field id="4" tag="20C" status="M" repetitive="N">
+            <qualifier>
+                <value>SEME</value>
+            </qualifier>
+            <genericFieldName>Reference</genericFieldName>
+            <detailedFieldName>Sender's Message Reference</detailedFieldName>
+            <content>
+                <format>20C</format>
+            </content>
+        </field>
+        <field id="5" tag="23G" status="M" repetitive="N">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Function of the Message</detailedFieldName>
+            <content>
+                <format>23G</format>
+            </content>
+        </field>
+        <field id="6" tag="98a" status="O" repetitive="N">
+            <qualifier>
+                <value>PREP</value>
+            </qualifier>
+            <genericFieldName>Date/Time</genericFieldName>
+            <detailedFieldName>Preparation Date/Time</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>98A</format>
+                </option>
+                <option name="C">
+                    <format>98C</format>
+                </option>
+                <option name="E">
+                    <format>98E</format>
+                </option>
+            </options>
+        </field>
+        <field id="7" tag="69a" status="M" repetitive="N">
+            <qualifier>
+                <value>STAT</value>
+            </qualifier>
+            <genericFieldName>Period</genericFieldName>
+            <detailedFieldName>Statement Period</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>69A</format>
+                </option>
+                <option name="B">
+                    <format>69B</format>
+                </option>
+            </options>
+        </field>
+        <field id="8" tag="22F" status="O" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Indicator</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <content>
+                    <format>22F</format>
+                </content>
+            </field>
+        <sequence id="2" parentSequenceId="1" shortName="A1" 
+            name="Optional Repetitive Subsequence A1 Linkages" repetitive="Y" status="O">
+            
+            <field id="9" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Start of Block</detailedFieldName>
+                <content>
+                    <value>LINK</value>
+                </content>
+            </field>
+            <field id="10" tag="13a" status="O" repetitive="N">
+                <qualifier>
+                    <value>LINK</value>
+                </qualifier>
+                <genericFieldName>Number Identification</genericFieldName>
+                <detailedFieldName>Linked Message</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>13A</format>
+                    </option>
+                    <option name="B">
+                        <format>13B</format>
+                    </option>
+                </options>
+            </field>
+            <field id="11" tag="20C" status="M" repetitive="N">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Reference</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <content>
+                    <format>20C</format>
+                </content>
+            </field>
+            <field id="12" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>End of Block</detailedFieldName>
+                <content>
+                    <value>LINK</value>
+                </content>
+            </field>
+        </sequence> <!-- End of Subsequence A1 -->
+        <field id="13" tag="95a" status="O" repetitive="N">
+            <qualifier>
+                <value>ACOW</value>
+            </qualifier>
+            <genericFieldName>Party</genericFieldName>
+            <detailedFieldName>Account Owner</detailedFieldName>
+            <options>
+                <option name="P">
+                    <format>95P</format>
+                </option>
+                <option name="R">
+                    <format>95R</format>
+                </option>
+            </options>
+        </field>
+        <field id="14" tag="97a" status="O" repetitive="N">
+            <qualifier>
+                <value>SAFE</value>
+            </qualifier>
+            <genericFieldName>Account</genericFieldName>
+            <detailedFieldName>Safekeeping Account</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>97A</format>
+                </option>
+                <option name="B">
+                    <format>97B</format>
+                </option>
+            </options>
+        </field>
+        <field id="15" tag="17B" status="M" repetitive="N">
+            <qualifier>
+                <value>ACTI</value>
+            </qualifier>
+            <genericFieldName>Flag</genericFieldName>
+            <detailedFieldName>Activity Flag</detailedFieldName>
+            <content>
+                <format>17B</format>
+            </content>
+        </field>
+        <field id="16" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>End of Block</detailedFieldName>
+            <content>
+                <value>GENL</value>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence A -->
+    <sequence id="3" nextSequenceId="10" status="O" repetitive="Y"
+        shortName="B" name="Optional Repetitive Sequence B Cash Account Activity">
+        <field id="17" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Start of Block</detailedFieldName>
+            <content>
+                <value>CASHACCT</value>
+            </content>
+        </field>
+        <field id="18" tag="95a" status="O" repetitive="N">
+            <qualifier>
+                <value>ACOW</value>
+            </qualifier>
+            <genericFieldName>Party</genericFieldName>
+            <detailedFieldName>Account Owner</detailedFieldName>
+            <options>
+                <option name="P">
+                    <format>95P</format>
+                </option>
+                <option name="R">
+                    <format>95R</format>
+                </option>
+            </options>
+        </field>
+        <field id="19" tag="97a" status="M" repetitive="N">
+            <qualifier>
+                <value>CASH</value>
+            </qualifier>
+            <genericFieldName>Account</genericFieldName>
+            <detailedFieldName>Cash Account</detailedFieldName>
+            <options>
+                <option name="A">
+                    <format>97A</format>
+                </option>
+                <option name="E">
+                    <format>97E</format>
+                </option>
+            </options>
+        </field>
+        <sequence id="4" parentSequenceId="3" status="M" repetitive="Y"
+            shortName="B1" name="Mandatory Repetitive Subsequence B1 Activity Information Per Currency">
+            <field id="20" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier />
+                <genericFieldName />
+                <detailedFieldName>Start of Block</detailedFieldName>
+                <content>
+                    <value>ACTCURR</value>
+                </content>
+            </field>
+            <field id="21" tag="11A" status="M" repetitive="N">
+                <qualifier>
+                    <value>ACCT</value>
+                </qualifier>
+                <genericFieldName>Currency</genericFieldName>
+                <detailedFieldName>Currency of Account</detailedFieldName>
+                <content>
+                    <format>11A</format>
+                </content>
+            </field>
+            <field id="22" tag="17B" status="M" repetitive="N">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Balance</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <content>
+                    <format>17B</format>
+                </content>
+            </field>
+            <field id="23" tag="93D" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Balance</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <content>
+                    <format>93D</format>
+                </content>
+            </field>
+            <sequence id="5" parentSequenceId="4" status="O" repetitive="Y"
+                shortName="B1a" name="Optional Repetitive Subsequence B1a Activity Information Per Transaction">
+                <field id="24" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                    <qualifier />
+                    <genericFieldName />
+                    <detailedFieldName>Start of Block</detailedFieldName>
+                    <content>
+                        <value>ACTINFO</value>
+                    </content>
+                </field>
+                <sequence id="6" parentSequenceId="5" nextSequenceId="7" status="M" repetitive="Y"
+                    shortName="B1a1" name="Mandatory Repetitive Subsequence B1a1 Linkages">
+                    <field id="25" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                        <qualifier />
+                        <genericFieldName />
+                        <detailedFieldName>Start of Block</detailedFieldName>
+                        <content>
+                            <value>LINK</value>
+                        </content>
+                    </field>
+                    <field id="26" tag="13a" status="O" repetitive="N">
+                        <qualifier>
+                            <value>LINK</value>
+                        </qualifier>
+                        <genericFieldName>Number Identification</genericFieldName>
+                        <detailedFieldName>Linked Message</detailedFieldName>
+                        <options>
+                            <option name="A">
+                                <format>13A</format>
+                            </option>
+                            <option name="B">
+                                <format>13B</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="27" tag="20C" status="M" repetitive="N">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Reference</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <content>
+                            <format>20C</format>
+                        </content>
+                    </field>
+                    <field id="28" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>End of Block</detailedFieldName>
+                        <content>
+                            <value>LINK</value>
+                        </content>
+                    </field>
+                </sequence>  <!-- End of Subsequence B1a1 -->
+                <sequence id="7" parentSequenceId="5" nextSequenceId="8" status="O" repetitive="N"
+                    shortName="B1a2" name="Optional Subsequence B1a2 Cash Only Movement Details">
+                    <field id="29" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                        <qualifier />
+                        <genericFieldName />
+                        <detailedFieldName>Start of Block</detailedFieldName>
+                        <content>
+                            <value>CASHDET</value>
+                        </content>
+                    </field>
+                    <field id="30" tag="19A" status="M" repetitive="N">
+                        <qualifier>
+                            <value>PSTA</value>
+                        </qualifier>
+                        <genericFieldName>Amount</genericFieldName>
+                        <detailedFieldName>Posting Amount</detailedFieldName>
+                        <content>
+                            <format>19A</format>
+                        </content>
+                    </field>
+                    <field id="31" tag="36B" status="O" repetitive="N">
+                        <qualifier>
+                            <value>UNDL</value>
+                        </qualifier>
+                        <genericFieldName>Quantity of Financial Instrument</genericFieldName>
+                        <detailedFieldName>Underlying Quantity</detailedFieldName>
+                        <content>
+                            <format>36B</format>
+                        </content>
+                    </field>
+                    <field id="32" tag="35B" status="O" repetitive="N">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>Identification of the Financial Instrument</detailedFieldName>
+                        <content>
+                            <format>35B</format>
+                        </content>
+                    </field>
+                    <field id="33" tag="22a" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Indicator</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <options>
+                            <option name="F">
+                                <format>22F</format>
+                            </option>
+                            <option name="H">
+                                <format>22H</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="34" tag="98a" status="M" repetitive="N">
+                        <qualifier>
+                            <value>ESET</value>
+                        </qualifier>
+                        <genericFieldName>Date/Time</genericFieldName>
+                        <detailedFieldName>Effective Settlement Date/Time</detailedFieldName>
+                        <options>
+                            <option name="A">
+                                <format>98A</format>
+                            </option>
+                            <option name="B">
+                                <format>98B</format>
+                            </option>
+                            <option name="C">
+                                <format>98C</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="35" tag="70E" status="O" repetitive="N">
+                        <qualifier>
+                            <value>TRDE</value>
+                        </qualifier>
+                        <genericFieldName>Narrative</genericFieldName>
+                        <detailedFieldName>Transaction Details Narrative</detailedFieldName>
+                        <content>
+                            <format>70E</format>
+                        </content>
+                    </field>
+                    <field id="36" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>End of Block</detailedFieldName>
+                        <content>
+                            <value>CASHDET</value>
+                        </content>
+                    </field>
+                </sequence> <!-- End of Subsequence B1a2 -->
+                <sequence id="8" parentSequenceId="5" nextSequenceId="9" status="O" repetitive="N"
+                    shortName="B1a3" name="Optional Subsequence B1a3 Cash and Securities Movement Details">
+                    <field id="37" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                        <qualifier />
+                        <genericFieldName />
+                        <detailedFieldName>Start of Block</detailedFieldName>
+                        <content>
+                            <value>CASHSECDET</value>
+                        </content>
+                    </field>
+                    <field id="38" tag="97a" status="O" repetitive="N">
+                        <qualifier>
+                            <value>SAFE</value>
+                        </qualifier>
+                        <genericFieldName>Account</genericFieldName>
+                        <detailedFieldName>Safekeeping Account</detailedFieldName>
+                        <options>
+                            <option name="A">
+                                <format>97A</format>
+                            </option>
+                            <option name="B">
+                                <format>97B</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="39" tag="19A" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Amount</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <content>
+                            <format>19A</format>
+                        </content>
+                    </field>
+                    <field id="40" tag="36B" status="M" repetitive="N">
+                        <qualifier>
+                            <value>PSTA</value>
+                        </qualifier>
+                        <genericFieldName>Quantity of Financial Instrument</genericFieldName>
+                        <detailedFieldName>Posting Quantity</detailedFieldName>
+                        <content>
+                            <format>36B</format>
+                        </content>
+                    </field>
+                    <field id="41" tag="99A" status="O" repetitive="N">
+                        <qualifier>
+                            <value>DAAC</value>
+                        </qualifier>
+                        <genericFieldName>Number Count</genericFieldName>
+                        <detailedFieldName>Number of Days Accrued</detailedFieldName>
+                        <content>
+                            <format>99A</format>
+                        </content>
+                    </field>
+                    <field id="42" tag="35B" status="M" repetitive="N">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>Identification of the Financial Instrument</detailedFieldName>
+                        <content>
+                            <format>35B</format>
+                        </content>
+                    </field>
+                    <field id="43" tag="22a" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Indicator</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <options>
+                            <option name="F">
+                                <format>22F</format>
+                            </option>
+                            <option name="H">
+                                <format>22H</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="44" tag="98a" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Date/Time</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <options>
+                            <option name="A">
+                                <format>98A</format>
+                            </option>
+                            <option name="B">
+                                <format>98B</format>
+                            </option>
+                            <option name="C">
+                                <format>98C</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="45" tag="25D" status="O" repetitive="N">
+                        <qualifier>
+                            <value>MOVE</value>
+                        </qualifier>
+                        <genericFieldName>Status Code</genericFieldName>
+                        <detailedFieldName>Movement Status</detailedFieldName>
+                        <content>
+                            <format>25D</format>
+                        </content>
+                    </field>
+                    <field id="46" tag="70E" status="O" repetitive="N">
+                        <qualifier>
+                            <value>TRDE</value>
+                        </qualifier>
+                        <genericFieldName>Narrative</genericFieldName>
+                        <detailedFieldName>Transaction Details Narrative</detailedFieldName>
+                        <content>
+                            <format>70E</format>
+                        </content>
+                    </field>
+                    <field id="47" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>End of Block</detailedFieldName>
+                        <content>
+                            <value>CASHSECDET</value>
+                        </content>
+                    </field>
+                </sequence> <!-- End of Subsequence B1a3 -->
+                <sequence id="9" parentSequenceId="5" status="O" repetitive="Y"
+                    shortName="B1a4" name="Optional Repetitive Subsequence B1a4 Settlement Parties">
+                    <field id="48" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                        <qualifier />
+                        <genericFieldName />
+                        <detailedFieldName>Start of Block</detailedFieldName>
+                        <content>
+                            <value>SETPRTY</value>
+                        </content>
+                    </field>
+                    <field id="49" tag="95a" status="M" repetitive="N">
+                        <qualifier>
+                            <format>4!c</format>
+                        </qualifier>
+                        <genericFieldName>Party</genericFieldName>
+                        <detailedFieldName></detailedFieldName>
+                        <options>
+                            <option name="C">
+                                <format>95C</format>
+                            </option>
+                            <option name="P">
+                                <format>95P</format>
+                            </option>
+                            <option name="Q">
+                                <format>95Q</format>
+                            </option>
+                            <option name="R">
+                                <format>95R</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="50" tag="97a" status="O" repetitive="N">
+                        <qualifier>
+                            <value>SAFE</value>
+                        </qualifier>
+                        <genericFieldName>Account</genericFieldName>
+                        <detailedFieldName>Safekeeping Account</detailedFieldName>
+                        <options>
+                            <option name="A">
+                                <format>97A</format>
+                            </option>
+                            <option name="B">
+                                <format>97B</format>
+                            </option>
+                        </options>
+                    </field>
+                    <field id="51" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                        <qualifier></qualifier>
+                        <genericFieldName></genericFieldName>
+                        <detailedFieldName>End of Block</detailedFieldName>
+                        <content>
+                            <value>SETPRTY</value>
+                        </content>
+                    </field>
+                </sequence> <!-- End of Subsequence B1a4 -->
+                <field id="52" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                    <qualifier></qualifier>
+                    <genericFieldName></genericFieldName>
+                    <detailedFieldName>End of Block</detailedFieldName>
+                    <content>
+                        <value>ACTINFO</value>
+                    </content>
+                </field>
+            </sequence> <!-- End of Subsequence B1a -->
+            <field id="53" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>End of Block</detailedFieldName>
+                <content>
+                    <value>ACTCURR</value>
+                </content>
+            </field>
+        </sequence> <!-- End of Subsequence B1 -->
+        <field id="54" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>End of Block</detailedFieldName>
+            <content>
+                <value>CASHACCT</value>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence B -->
+    <sequence id="10" nextSequenceId="14" status="O" repetitive="Y"
+        shortName="C" name="Optional Repetitive Sequence C Free Asset Activity">
+        <field id="55" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Start of Block</detailedFieldName>
+            <content>
+                <value>FREEASS</value>
+            </content>
+        </field>
+        <sequence id="11" parentSequenceId="10" nextSequenceId="12" status="M" repetitive="Y"
+            shortName="C1" name="Mandatory Repetitive Subsequence C1 Linkages">
+            <field id="56" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier />
+                <genericFieldName />
+                <detailedFieldName>Start of Block</detailedFieldName>
+                <content>
+                    <value>LINK</value>
+                </content>
+            </field>
+            <field id="57" tag="13a" status="O" repetitive="N">
+                <qualifier>
+                    <value>LINK</value>
+                </qualifier>
+                <genericFieldName>Number Identification</genericFieldName>
+                <detailedFieldName>Linked Message</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>13A</format>
+                    </option>
+                    <option name="B">
+                        <format>13B</format>
+                    </option>
+                </options>
+            </field>
+            <field id="58" tag="20C" status="M" repetitive="N">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Reference</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <content>
+                    <format>20C</format>
+                </content>
+            </field>
+            <field id="59" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>End of Block</detailedFieldName>
+                <content>
+                    <value>LINK</value>
+                </content>
+            </field>
+        </sequence> <!-- End of Subsequence C1 -->
+        <sequence id="12" parentSequenceId="10" status="O" repetitive="N"
+            shortName="C2" name="Optional Subsequence C2 Transaction Details">
+            <field id="60" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                <qualifier />
+                <genericFieldName />
+                <detailedFieldName>Start of Block</detailedFieldName>
+                <content>
+                    <value>TRANSDET</value>
+                </content>
+            </field>
+            <field id="61" tag="95a" status="O" repetitive="N">
+                <qualifier>
+                    <value>ACOW</value>
+                </qualifier>
+                <genericFieldName>Party</genericFieldName>
+                <detailedFieldName>Account Owner</detailedFieldName>
+                <options>
+                    <option name="P">
+                        <format>95P</format>
+                    </option>
+                    <option name="R">
+                        <format>95R</format>
+                    </option>
+                </options>
+            </field>
+            <field id="62" tag="97a" status="O" repetitive="N">
+                <qualifier>
+                    <value>SAFE</value>
+                </qualifier>
+                <genericFieldName>Account</genericFieldName>
+                <detailedFieldName>Safekeeping Account</detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>97A</format>
+                    </option>
+                    <option name="B">
+                        <format>97B</format>
+                    </option>
+                </options>
+            </field>
+            <field id="63" tag="36B" status="M" repetitive="N">
+                <qualifier>
+                    <value>PSTA</value>
+                </qualifier>
+                <genericFieldName>Quantity of Financial Instrument</genericFieldName>
+                <detailedFieldName>Posting Quantity</detailedFieldName>
+                <content>
+                    <format>36B</format>
+                </content>
+            </field>
+            <field id="64" tag="99A" status="O" repetitive="N">
+                <qualifier>
+                    <value>DAAC</value>
+                </qualifier>
+                <genericFieldName>Number Count</genericFieldName>
+                <detailedFieldName>Number of Days Accrued</detailedFieldName>
+                <content>
+                    <format>99A</format>
+                </content>
+            </field>
+            <field id="65" tag="35B" status="M" repetitive="N">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>Identification of the Financial Instrument</detailedFieldName>
+                <content>
+                    <format>35B</format>
+                </content>
+            </field>
+            <field id="66" tag="22a" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Indicator</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <options>
+                    <option name="F">
+                        <format>22F</format>
+                    </option>
+                    <option name="H">
+                        <format>22H</format>
+                    </option>
+                </options>
+            </field>
+            <field id="67" tag="98a" status="M" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+                <qualifier>
+                    <format>4!c</format>
+                </qualifier>
+                <genericFieldName>Date/Time</genericFieldName>
+                <detailedFieldName></detailedFieldName>
+                <options>
+                    <option name="A">
+                        <format>98A</format>
+                    </option>
+                    <option name="B">
+                        <format>98B</format>
+                    </option>
+                    <option name="C">
+                        <format>98C</format>
+                    </option>
+                </options>
+            </field>
+            <field id="68" tag="25D" status="O" repetitive="N">
+                <qualifier>
+                    <value>MOVE</value>
+                </qualifier>
+                <genericFieldName>Status Code</genericFieldName>
+                <detailedFieldName>Movement Status</detailedFieldName>
+                <content>
+                    <format>25D</format>
+                </content>
+            </field>
+            <field id="69" tag="70E" status="O" repetitive="N">
+                <qualifier>
+                    <value>TRDE</value>
+                </qualifier>
+                <genericFieldName>Narrative</genericFieldName>
+                <detailedFieldName>Transaction Details Narrative</detailedFieldName>
+                <content>
+                    <format>70E</format>
+                </content>
+            </field>
+            <sequence id="13" parentSequenceId="12" status="O" repetitive="Y"
+                shortName="C2a" name="Optional Repetitive Subsequence C2a Settlement Parties">
+                <field id="70" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+                    <qualifier />
+                    <genericFieldName />
+                    <detailedFieldName>Start of Block</detailedFieldName>
+                    <content>
+                        <value>SETPRTY</value>
+                    </content>
+                </field>
+                <field id="71" tag="95a" status="M" repetitive="N">
+                    <qualifier>
+                        <format>4!c</format>
+                    </qualifier>
+                    <genericFieldName>Party</genericFieldName>
+                    <detailedFieldName></detailedFieldName>
+                    <options>
+                        <option name="C">
+                            <format>95C</format>
+                        </option>
+                        <option name="P">
+                            <format>95P</format>
+                        </option>
+                        <option name="Q">
+                            <format>95Q</format>
+                        </option>
+                        <option name="R">
+                            <format>95R</format>
+                        </option>
+                    </options>
+                </field>
+                <field id="72" tag="97a" status="O" repetitive="N">
+                    <qualifier>
+                        <value>SAFE</value>
+                    </qualifier>
+                    <genericFieldName>Account</genericFieldName>
+                    <detailedFieldName>Safekeeping Account</detailedFieldName>
+                    <options>
+                        <option name="A">
+                            <format>97A</format>
+                        </option>
+                        <option name="B">
+                            <format>97B</format>
+                        </option>
+                    </options>
+                </field>
+                <field id="73" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                    <qualifier></qualifier>
+                    <genericFieldName></genericFieldName>
+                    <detailedFieldName>End of Block</detailedFieldName>
+                    <content>
+                        <value>SETPRTY</value>
+                    </content>
+                </field>
+            </sequence> <!-- End of Subsequence C2a -->
+            <field id="74" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+                <qualifier></qualifier>
+                <genericFieldName></genericFieldName>
+                <detailedFieldName>End of Block</detailedFieldName>
+                <content>
+                    <value>TRANSDET</value>
+                </content>
+            </field>
+        </sequence> <!-- End of Subsequence C2 -->
+        <field id="75" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>End of Block</detailedFieldName>
+            <content>
+                <value>FREEASS</value>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence C -->
+    <sequence id="14" status="O" repetitive="N"
+        shortName="D" name="Optional Sequence D Additional Information">
+        <field id="76" tag="16R" status="M" repetitive="N" firstOfSequence="Y">
+            <qualifier />
+            <genericFieldName />
+            <detailedFieldName>Start of Block</detailedFieldName>
+            <content>
+                <value>ADDINFO</value>
+            </content>
+        </field>
+        <field id="77" tag="95a" status="O" repetitive="Y" repetitiveEnd="Y" repetitiveStart="Y">
+            <qualifier>
+                <format>4!c</format>
+            </qualifier>
+            <genericFieldName>Party</genericFieldName>
+            <detailedFieldName></detailedFieldName>
+            <options>
+                <option name="P">
+                    <format>95P</format>
+                </option>
+                <option name="Q">
+                    <format>95Q</format>
+                </option>
+                <option name="R">
+                    <format>95R</format>
+                </option>
+            </options>
+        </field>
+        <field id="78" tag="16S" status="M" repetitive="N" lastOfSequence="Y">
+            <qualifier></qualifier>
+            <genericFieldName></genericFieldName>
+            <detailedFieldName>End of Block</detailedFieldName>
+            <content>
+                <value>ADDINFO</value>
+            </content>
+        </field>
+    </sequence> <!-- End of Sequence D -->
+            
+        
+</mt>
