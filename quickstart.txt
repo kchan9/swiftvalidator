@@ -1,0 +1,6 @@
+Quick start: 
+
+1) open eclipse
+2) import genericDashboard, swiftvalidator to workspace
+3) run net.uglobal.gui.Application
+4) paste content of mt541.txt to textarea, click "validate" button
