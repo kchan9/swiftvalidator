@@ -1,0 +1,46 @@
+<shortcuts>
+    <skipIfNotSupported />
+    <programGroup defaultName="SwiftValidator" location="startMenu" />
+    <shortcut 
+        os="windows" 
+        name="SwiftValidator" 
+        target="$INSTALL_PATH\bin\run.bat" 
+        commandLine="&quot;$INSTALL_PATH/bin/run.bat&quot;"
+        workingDirectory="$INSTALL_PATH" 
+        description="Run SwiftValidator" 
+        iconFile="$INSTALL_PATH\bin\swiftvalidator.ico"
+        initialState="noShow" 
+        programGroup="yes" 
+        desktop="no" 
+        applications="no" 
+        startMenu="no" 
+        startup="no">
+        <createForPack name="bin" />
+    </shortcut>
+    <!-- shortcut os="windows" name="Environment Setup" target="$INSTALL_PATH\bin\env_setup.bat" commandLine=""
+        workingDirectory="$INSTALL_PATH\bin" description="Environment Setup" iconFile="$INSTALL_PATH\setup.ico" iconIndex="0"
+        initialState="normal" programGroup="yes" desktop="no" applications="no" startMenu="no" startup="no">
+        <createForPack name="bin" />
+        </shortcut>
+        <shortcut os="windows" name="README" target="$INSTALL_PATH\bin\readme.doc" commandLine="" workingDirectory="$INSTALL_PATH\bin"
+        description="README" iconFile="$INSTALL_PATH\readme.ico" iconIndex="0" initialState="normal" programGroup="yes"
+        desktop="no" applications="no" startMenu="no" startup="no">
+        <createForPack name="bin" />
+        </shortcut -->
+    <shortcut 
+        os="windows" 
+        name="Uninstaller" 
+        target="$INSTALL_PATH\Uninstall\uninstaller.jar" 
+        commandLine="-jar &quot;$INSTALL_PATH/Uninstaller/uninstaller.jar&quot;"
+        workingDirectory="$INSTALL_PATH"     
+        description="Uninstall SwiftValidator" 
+        initialState="noShow"  
+        programGroup="yes"
+        desktop="no" 
+        applications="no" 
+        startMenu="no" 
+        startup="no">
+        <createForPack name="bin" />
+        <!-- iconFile="trashcan_full" -->
+    </shortcut>
+</shortcuts>

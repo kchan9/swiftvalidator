@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<installation version="1.0">
+    <info>
+        <appname>SwiftValidator</appname>
+        <appversion>0.1</appversion>
+        <authors>
+            <author name="UGlobalSolutions" email="admin@swiftvalidator.com" />
+        </authors>
+        <url>http://www.swiftvalidator.com/</url>
+        <!--webdir></webdir -->
+        <uninstaller name="uninstaller.jar" path="${INSTALL_PATH}/Uninstall" write="yes" />
+        <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7" />
+    </info>
+    <guiprefs width="640" height="480" resizable="no">
+        <modifier key="useButtonIcons" value="yes" />
+        <modifier key="useLabelIcons" value="yes" />
+        <modifier key="labelGap" value="2" />
+        <modifier key="layoutAnchor" value="NORTHWEST" />
+        <modifier key="useHeadingPanel" value="yes" />
+        <modifier key="headingImageOnLeft" value="yes" />
+        <modifier key="headingLineCount" value="1" />
+        <modifier key="headingFontSize" value="1.5" />
+        <modifier key="headingBackgroundColor" value="0x00ffffff" />
+        <modifier key="headingPanelCounter" value="text" />
+        <modifier key="headingPanelCounterPos" value="inHeading" />
+    </guiprefs>
+    <locale>
+        <langpack iso3="eng" />
+    </locale>
+    <resources>
+        <res id="LicencePanel.licence" src="licence.txt" />
+        <res id="InfoPanel.info" src="readme.txt" />
+        <res src="default_shortcut_specification.xml" id="shortcutSpec.xml" />
+    </resources>
+    <panels>
+        <panel classname="HelloPanel" />
+        <panel classname="InfoPanel" />
+        <panel classname="LicencePanel" />
+        <panel classname="TargetPanel" />
+        <panel classname="PacksPanel" />
+        <panel classname="InstallPanel" />
+        <panel classname="SummaryPanel" />
+        <panel classname="ShortcutPanel" id="shortcutpanel" />
+        <panel classname="FinishPanel" />
+    </panels>
+    <packs>
+        <pack name="bin" required="yes">
+            <description>bin</description>
+            <file src="D:/workspace_swiftvalidator/swiftvalidator_deployment/install_tmp/bin" targetdir="$INSTALL_PATH" />
+        </pack>
+        <pack name="etc" required="yes">
+            <description>etc</description>
+            <file src="D:/workspace_swiftvalidator/swiftvalidator_deployment/install_tmp/etc" targetdir="$INSTALL_PATH" />
+        </pack>
+        <pack name="images" required="yes">
+            <description>images</description>
+            <file src="D:/workspace_swiftvalidator/swiftvalidator_deployment/install_tmp/images" targetdir="$INSTALL_PATH" />
+        </pack>
+        <pack name="lib" required="yes">
+            <description>lib</description>
+            <file src="D:/workspace_swiftvalidator/swiftvalidator_deployment/install_tmp/lib" targetdir="$INSTALL_PATH" />
+        </pack>
+        <pack name="log" required="yes">
+            <description>log</description>
+            <file src="D:/workspace_swiftvalidator/swiftvalidator_deployment/install_tmp/log" targetdir="$INSTALL_PATH" />
+        </pack>
+    </packs>
+    <native type="izpack" name="ShellLink.dll" />
+    <native type="izpack" name="ShellLink_x64.dll" />
+</installation>
